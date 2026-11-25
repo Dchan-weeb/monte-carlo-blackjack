@@ -17,7 +17,7 @@
   <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -40,24 +40,24 @@
     :root,
     :root[data-theme="noir"] {
       --bg-app: #050807;
-      --lobby-bg: radial-gradient(circle at 50% 18%, rgba(14, 59, 44, 0.55) 0%, rgba(5, 8, 7, 0.96) 65%), #050807;
-      --felt-center: #0e3b2c;
-      --felt-mid: #071e16;
-      --felt-edge: #040a08;
-      --surface: rgba(10, 16, 14, 0.78);
-      --surface-elevated: rgba(15, 24, 21, 0.92);
-      --border-subtle: rgba(212, 175, 55, 0.24);
-      --border-strong: rgba(212, 175, 55, 0.52);
+      --lobby-bg: radial-gradient(circle at 50% 18%, rgba(14, 59, 44, 0.58) 0%, rgba(5, 8, 7, 0.96) 65%), #050807;
+      --felt-center: #104533;
+      --felt-mid: #08231a;
+      --felt-edge: #040b09;
+      --surface: rgba(10, 17, 15, 0.80);
+      --surface-elevated: rgba(15, 24, 21, 0.95);
+      --border-subtle: rgba(212, 175, 55, 0.25);
+      --border-strong: rgba(212, 175, 55, 0.56);
       --accent: #D4AF37;
       --accent-soft: #F3E5AB;
       --accent-contrast: #0A0D0C;
       --secondary: #10B981;
-      --spotlight: rgba(212, 175, 55, 0.22);
-      --rail-bg: linear-gradient(180deg, #101815 0%, #060908 100%);
-      --rail-border: rgba(212, 175, 55, 0.3);
-      --card-glow: rgba(212, 175, 55, 0.35);
+      --spotlight: rgba(212, 175, 55, 0.24);
+      --rail-bg: linear-gradient(180deg, #131d19 0%, #060a08 100%);
+      --rail-border: rgba(212, 175, 55, 0.34);
+      --card-glow: rgba(212, 175, 55, 0.38);
       --felt-grid-opacity: 0;
-      --weave-opacity: 0.14;
+      --weave-opacity: 0.16;
       --anim-speed: 1;
     }
 
@@ -71,8 +71,8 @@
       --felt-center: #0E6E42;
       --felt-mid: #08452A;
       --felt-edge: #031D11;
-      --surface: rgba(24, 13, 12, 0.84);
-      --surface-elevated: rgba(34, 18, 15, 0.94);
+      --surface: rgba(24, 13, 12, 0.86);
+      --surface-elevated: rgba(34, 18, 15, 0.95);
       --border-subtle: rgba(245, 198, 72, 0.38);
       --border-strong: rgba(245, 198, 72, 0.78);
       --accent: #F5C648;
@@ -117,8 +117,8 @@
       --felt-center: #72102A;
       --felt-mid: #420717;
       --felt-edge: #1B0209;
-      --surface: rgba(26, 8, 14, 0.84);
-      --surface-elevated: rgba(38, 11, 20, 0.94);
+      --surface: rgba(26, 8, 14, 0.85);
+      --surface-elevated: rgba(38, 11, 20, 0.95);
       --border-subtle: rgba(244, 172, 183, 0.30);
       --border-strong: rgba(244, 172, 183, 0.68);
       --accent: #F4ACB7;
@@ -139,8 +139,8 @@
       --felt-center: #103A82;
       --felt-mid: #08204B;
       --felt-edge: #030D21;
-      --surface: rgba(9, 18, 36, 0.84);
-      --surface-elevated: rgba(13, 25, 48, 0.94);
+      --surface: rgba(9, 18, 36, 0.85);
+      --surface-elevated: rgba(13, 25, 48, 0.95);
       --border-subtle: rgba(147, 197, 253, 0.28);
       --border-strong: rgba(147, 197, 253, 0.65);
       --accent: #93C5FD;
@@ -164,8 +164,8 @@
       --felt-center: #120B24;
       --felt-mid: #090514;
       --felt-edge: #030108;
-      --surface: rgba(13, 8, 26, 0.86);
-      --surface-elevated: rgba(20, 12, 38, 0.95);
+      --surface: rgba(13, 8, 26, 0.88);
+      --surface-elevated: rgba(20, 12, 38, 0.96);
       --border-subtle: rgba(0, 240, 255, 0.35);
       --border-strong: rgba(255, 46, 147, 0.78);
       --accent: #00F0FF;
@@ -240,14 +240,14 @@
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.07);
       transition: background 0.4s ease, border-color 0.4s ease;
     }
 
     .theme-surface-elevated {
       background: var(--surface-elevated);
       border: 1px solid var(--border-strong);
-      box-shadow: 0 20px 56px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.80);
     }
 
     .theme-accent-text { color: var(--accent); }
@@ -296,7 +296,7 @@
     .table-felt {
       position: relative;
       background: radial-gradient(ellipse at 50% 24%, var(--felt-center) 0%, var(--felt-mid) 56%, var(--felt-edge) 100%);
-      box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.72), inset 0 0 0 1.5px var(--border-subtle);
+      box-shadow: inset 0 0 65px rgba(0, 0, 0, 0.72), inset 0 0 0 1.5px var(--border-subtle);
       overflow: hidden;
       transition: background 0.55s ease;
     }
@@ -405,6 +405,7 @@
       box-shadow: 0 12px 22px rgba(0, 0, 0, 0.8), 0 0 16px var(--card-glow);
     }
     .clay-chip:active:not(:disabled) { transform: scale(0.94); }
+    .clay-chip:disabled { opacity: 0.35; cursor: not-allowed; filter: grayscale(0.6); }
 
     .chip-5    { background: repeating-conic-gradient(#D92B4B 0deg 20deg, #FFFDF7 20deg 30deg); color: #FFFDF7; }
     .chip-5 .clay-chip-inner { background: radial-gradient(circle at 30% 30%, #EF3D5C, #9F1239); }
@@ -420,12 +421,12 @@
     /* 3D Playing Cards */
     .card-scene {
       perspective: 1000px;
-      width: 60px;
-      height: 86px;
+      width: 62px;
+      height: 88px;
       transition: transform 0.2s ease;
     }
     @media (min-width: 768px) {
-      .card-scene { width: 76px; height: 110px; }
+      .card-scene { width: 78px; height: 112px; }
     }
     .card-scene:hover { transform: translateY(-6px) scale(1.04); z-index: 30 !important; }
 
@@ -435,6 +436,8 @@
       height: 100%;
       transform-style: preserve-3d;
       transition: transform calc(0.6s * var(--anim-speed)) cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .card-inner.deal-anim {
       animation: dealCard calc(0.42s * var(--anim-speed)) cubic-bezier(0.16, 1, 0.3, 1) backwards;
     }
     :root[data-card3d="false"] .card-inner {
@@ -444,7 +447,7 @@
     .card-inner.is-flipped { transform: rotateY(180deg); }
 
     @keyframes dealCard {
-      0% { opacity: 0; transform: translate(160px, -180px) rotate(22deg) scale(0.55); }
+      0% { opacity: 0; transform: translate(140px, -160px) rotate(18deg) scale(0.58); }
       100% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
     }
 
@@ -459,11 +462,19 @@
     }
 
     .card-front {
-      background: linear-gradient(160deg, #FFFDF7 0%, #F4EFE4 100%);
+      background: linear-gradient(155deg, #FFFFFF 0%, #F7F2E8 60%, #EDE4D3 100%);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 5px 6px;
+    }
+    .card-front::before {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      border-radius: 8px;
+      border: 1px solid rgba(180, 148, 62, 0.18);
+      pointer-events: none;
     }
 
     .card-back {
@@ -540,7 +551,7 @@
   <!-- Celebration Confetti / Sparks Canvas -->
   <canvas id="fx-canvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
 
-  <!-- Snackbar Container (Never uses alert/confirm) -->
+  <!-- Snackbar Container -->
   <div id="snackbar-container" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[80] flex flex-col items-center gap-2 pointer-events-none w-full max-w-md px-4"></div>
 
   <!-- Dramatic Random Event Banner -->
@@ -572,6 +583,11 @@
 
         <!-- Top Right Quick Actions -->
         <div class="flex flex-wrap items-center gap-2">
+          <button id="btn-lobby-odds" class="ui-pill px-3.5 py-2 bg-black/45 hover:bg-black/65 border border-white/15 text-xs text-emerald-300" title="View Rules, Payouts & House Edge">
+            <span class="material-symbols-rounded text-base">percent</span>
+            <span class="hidden sm:inline">Odds & Rules</span>
+          </button>
+
           <button id="btn-lobby-theme-quick" class="ui-pill px-3.5 py-2 bg-black/45 hover:bg-black/65 border border-white/15 text-xs text-white" title="Quick Switch Theme">
             <span class="material-symbols-rounded text-base theme-accent-text">palette</span>
             <span id="lobby-theme-name-pill" class="hidden sm:inline">Monte Carlo Noir</span>
@@ -597,13 +613,13 @@
       <!-- HERO HEADER -->
       <div class="text-center mb-6">
         <div class="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.28em] theme-accent-soft opacity-80 mb-1">
-          <span>♠</span> High-Stakes Salon Privé • PeerJS WebRTC <span>♦</span>
+          <span>♠</span> High-Stakes Salon Privé • Fair Vegas Odds <span>♦</span>
         </div>
         <h1 class="font-serif text-4xl sm:text-6xl font-black tracking-wide theme-accent-text drop-shadow">
           MONTE CARLO NOIR
         </h1>
         <p class="text-slate-300 text-xs sm:text-sm mt-2 max-w-2xl mx-auto">
-          7 live-switching luxury themes, 4 custom card backs, real-time room codes, 5 procedural lounge tracks, dynamic Cash Out vouchers & chaotic casino events.
+          True casino math with dealer peek, late surrender, live house-edge telemetry, 7 luxury themes, 5 procedural lounge tracks &amp; WebRTC private rooms.
         </p>
       </div>
 
@@ -646,13 +662,11 @@
 
       <!-- 4 GAMEMODE CARDS -->
       <div class="mb-6">
-        <div class="flex items-center justify-between mb-2">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
           <span class="text-[11px] font-mono uppercase tracking-widest theme-accent-text">Select Gamemode</span>
-          <span id="selected-mode-summary" class="text-xs text-slate-300 font-medium">Classic Noir • 6 Decks • $5–$5,000</span>
+          <span id="selected-mode-summary" class="text-xs text-slate-300 font-medium">Classic Noir • 6 Decks • $5–$5,000 • House Edge ~0.35%</span>
         </div>
-        <div id="gamemode-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <!-- Populated dynamically -->
-        </div>
+        <div id="gamemode-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"></div>
       </div>
 
       <!-- PRIMARY ACTION CARDS: CREATE ROOM / JOIN CODE / SOLO VIP -->
@@ -698,7 +712,7 @@
 
     <!-- TOP HUD BAR -->
     <header class="relative z-30 flex flex-wrap items-center justify-between gap-2 px-1">
-      <!-- Left: Leave + Room Code + Mode -->
+      <!-- Left: Leave + Room Code + Mode & Rules -->
       <div class="flex items-center gap-2">
         <button id="btn-leave-table" title="Return to Main Menu" class="ui-pill p-2.5 theme-surface text-rose-300 hover:border-rose-400/60">
           <span class="material-symbols-rounded text-xl">logout</span>
@@ -715,10 +729,12 @@
           </div>
         </div>
 
-        <div class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full theme-surface text-xs font-bold text-slate-200">
+        <button id="btn-table-odds" class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full theme-surface hover:border-emerald-400/50 text-xs font-bold text-slate-200 transition" title="Inspect Table Rules & House Edge">
           <span id="hud-mode-name" class="theme-accent-text">Classic Noir</span>
+          <span class="text-slate-500">•</span>
+          <span id="hud-rules-pill" class="font-mono text-[11px] text-emerald-300">6D • 3:2 • S17 • 0.35% Edge</span>
           <span id="hud-streak-badge" class="hidden ml-1 px-2 py-0.5 rounded-full bg-fuchsia-600 text-white font-mono text-[10px]">1.5x</span>
-        </div>
+        </button>
       </div>
 
       <!-- Center: Phase Status, Timer & Active Event Pill -->
@@ -744,7 +760,7 @@
 
         <button id="btn-toggle-strategy" class="ui-pill px-3 py-2 theme-surface text-emerald-300 text-xs">
           <span class="material-symbols-rounded text-base">psychology</span>
-          <span class="hidden md:inline">Coach</span>
+          <span class="hidden md:inline">Coach &amp; Odds</span>
         </button>
 
         <button id="btn-host-admin" class="hidden ui-pill px-3 py-2 bg-purple-600/85 hover:bg-purple-500 text-white text-xs">
@@ -774,7 +790,7 @@
         <div class="cyber-grid"></div>
         <div id="table-spotlight" class="table-spotlight"></div>
 
-        <!-- Curved Gold Table Inscriptions SVG (Toggleable in Settings) -->
+        <!-- Curved Gold Table Inscriptions SVG -->
         <svg id="table-inscriptions-svg" class="absolute inset-0 w-full h-full pointer-events-none z-[2]" viewBox="0 0 1200 680" preserveAspectRatio="none">
           <defs>
             <path id="arcTop" d="M 160,165 Q 600,405 1040,165" />
@@ -786,10 +802,10 @@
             <textPath id="svg-payout-text" href="#arcTop" startOffset="50%" text-anchor="middle">BLACKJACK PAYS 3 TO 2</textPath>
           </text>
           <text fill="var(--accent-soft)" fill-opacity="0.34" font-family="Playfair Display, serif" font-weight="700" font-size="13" letter-spacing="4">
-            <textPath id="svg-dealer-rule-text" href="#arcMid" startOffset="50%" text-anchor="middle">DEALER STANDS ON ALL 17s</textPath>
+            <textPath id="svg-dealer-rule-text" href="#arcMid" startOffset="50%" text-anchor="middle">DEALER STANDS ON ALL 17s • LATE SURRENDER</textPath>
           </text>
           <text fill="var(--accent-soft)" fill-opacity="0.34" font-family="Playfair Display, serif" font-weight="700" font-size="11" letter-spacing="4">
-            <textPath href="#arcBot" startOffset="50%" text-anchor="middle">INSURANCE PAYS 2 TO 1</textPath>
+            <textPath href="#arcBot" startOffset="50%" text-anchor="middle">INSURANCE PAYS 2 TO 1 • DEALER PEEKS FOR BJ</textPath>
           </text>
           <!-- Art Deco Corners -->
           <path d="M 22,56 L 22,22 L 56,22" fill="none" stroke="var(--accent)" stroke-opacity="0.35" stroke-width="2" />
@@ -798,7 +814,7 @@
           <path d="M 1178,624 L 1178,658 L 1144,658" fill="none" stroke="var(--accent)" stroke-opacity="0.35" stroke-width="2" />
         </svg>
 
-        <!-- TOP FELT ROW: DISCARD TRAY, DEALER ZONE, 6-DECK SHOE -->
+        <!-- TOP FELT ROW: DISCARD TRAY, DEALER ZONE, SHOE -->
         <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 items-start gap-2">
           <!-- Left: Discard Tray -->
           <div class="hidden md:flex md:col-span-3 items-center gap-2.5 pl-2">
@@ -817,10 +833,10 @@
               <span class="px-3 py-0.5 rounded-full bg-black/55 border border-white/15 font-serif text-[11px] font-bold tracking-[0.2em] uppercase theme-accent-soft">DEALER</span>
               <span id="dealer-score-badge" class="hidden font-mono text-xs font-extrabold px-3 py-0.5 rounded-full btn-primary-theme">0</span>
             </div>
-            <div id="dealer-cards-area" class="min-h-[92px] md:min-h-[114px] flex items-center justify-center gap-2 sm:gap-3"></div>
+            <div id="dealer-cards-area" class="min-h-[94px] md:min-h-[116px] flex items-center justify-center gap-2 sm:gap-3"></div>
           </div>
 
-          <!-- Right: 6-Deck Shoe Penetration -->
+          <!-- Right: Shoe Penetration -->
           <div class="hidden md:flex md:col-span-3 items-center justify-end gap-2.5 pr-2">
             <div class="leading-tight text-right">
               <div id="shoe-deck-title" class="text-[10px] font-mono uppercase tracking-wider text-slate-400">6-Deck Shoe</div>
@@ -834,7 +850,7 @@
 
         <!-- LIVE TICKER -->
         <div class="relative z-10 flex justify-center my-1">
-          <div class="px-4 py-1 rounded-full bg-black/50 border border-white/10 text-xs text-slate-200 max-w-xl truncate">
+          <div class="px-4 py-1 rounded-full bg-black/55 border border-white/10 text-xs text-slate-200 max-w-xl truncate shadow">
             <span class="theme-accent-text mr-1.5">✦</span>
             <span id="dealer-ticker-text">Welcome! Place your chips to begin.</span>
           </div>
@@ -852,8 +868,8 @@
 
     <!-- BOTTOM ACTION DOCK -->
     <footer class="relative z-30 max-w-7xl w-full mx-auto theme-surface rounded-[26px] px-3 sm:px-5 py-2.5 flex flex-col lg:flex-row items-center justify-between gap-3">
-      <!-- Left: Balances & Emotes -->
-      <div class="w-full lg:w-auto flex items-center justify-between lg:justify-start gap-2.5">
+      <!-- Left: Balances, Session P&L & Emotes -->
+      <div class="w-full lg:w-auto flex flex-wrap items-center justify-between lg:justify-start gap-2">
         <div class="flex items-center gap-2.5 bg-black/45 rounded-2xl px-3.5 py-1.5 border border-white/10">
           <div>
             <div class="text-[9px] font-mono uppercase tracking-wider text-emerald-300">Table Stack</div>
@@ -864,14 +880,19 @@
             <div class="text-[9px] font-mono uppercase tracking-wider text-slate-400">Safe Vault</div>
             <div id="hud-vault" class="font-mono font-bold text-sm text-slate-200 streamer-blur">$1,000</div>
           </div>
+          <div class="h-7 w-px bg-white/15 hidden sm:block"></div>
+          <div class="hidden sm:block">
+            <div class="text-[9px] font-mono uppercase tracking-wider text-slate-400">Session P&amp;L</div>
+            <div id="hud-session-pnl" class="font-mono font-extrabold text-xs text-slate-300">$0</div>
+          </div>
         </div>
 
         <div class="flex items-center gap-0.5 bg-black/40 rounded-full px-2 py-1 border border-white/10">
-          <button data-emote="🔥" class="emote-btn p-1.5 hover:scale-125 transition text-base">🔥</button>
-          <button data-emote="💎" class="emote-btn p-1.5 hover:scale-125 transition text-base">💎</button>
-          <button data-emote="👑" class="emote-btn p-1.5 hover:scale-125 transition text-base">👑</button>
-          <button data-emote="🥂" class="emote-btn p-1.5 hover:scale-125 transition text-base">🥂</button>
-          <button data-emote="💀" class="emote-btn p-1.5 hover:scale-125 transition text-base">💀</button>
+          <button data-emote="🔥" class="emote-btn p-1.5 hover:scale-125 transition text-base" title="Fire">🔥</button>
+          <button data-emote="💎" class="emote-btn p-1.5 hover:scale-125 transition text-base" title="Diamond">💎</button>
+          <button data-emote="👑" class="emote-btn p-1.5 hover:scale-125 transition text-base" title="Crown">👑</button>
+          <button data-emote="🥂" class="emote-btn p-1.5 hover:scale-125 transition text-base" title="Cheers">🥂</button>
+          <button data-emote="💀" class="emote-btn p-1.5 hover:scale-125 transition text-base" title="Skull">💀</button>
         </div>
       </div>
 
@@ -883,12 +904,17 @@
           <button data-chip="100" class="chip-btn clay-chip chip-100 w-11 h-11 text-[10px]"><span class="clay-chip-inner">$100</span></button>
           <button data-chip="500" class="chip-btn clay-chip chip-500 w-11 h-11 text-[10px]"><span class="clay-chip-inner">$500</span></button>
           <button data-chip="1000" class="chip-btn clay-chip chip-1000 w-11 h-11 text-[10px]"><span class="clay-chip-inner">$1K</span></button>
-          <div class="h-7 w-px bg-white/15 mx-1 hidden sm:block"></div>
-          <button id="btn-clear-bet" class="ui-pill px-3.5 py-2.5 bg-white/10 hover:bg-white/20 text-xs text-slate-200">Clear</button>
-          <button id="btn-rebet" class="ui-pill px-3.5 py-2.5 bg-indigo-600/80 hover:bg-indigo-500 text-xs text-white">Rebet</button>
+          <div class="h-7 w-px bg-white/15 mx-0.5 hidden sm:block"></div>
+          <div class="flex items-center gap-1 bg-black/45 p-1 rounded-full border border-white/10">
+            <button id="btn-bet-min" class="px-2.5 py-1 rounded-full hover:bg-white/15 text-[11px] font-mono font-bold text-slate-200 transition">Min</button>
+            <button id="btn-bet-2x" class="px-2.5 py-1 rounded-full hover:bg-white/15 text-[11px] font-mono font-bold theme-accent-soft transition">2×</button>
+            <button id="btn-bet-max" class="px-2.5 py-1 rounded-full hover:bg-white/15 text-[11px] font-mono font-bold text-amber-300 transition">Max</button>
+          </div>
+          <button id="btn-clear-bet" class="ui-pill px-3 py-2 bg-white/10 hover:bg-white/20 text-xs text-slate-200">Clear</button>
+          <button id="btn-rebet" class="ui-pill px-3 py-2 bg-indigo-600/80 hover:bg-indigo-500 text-xs text-white">Rebet</button>
           <button id="btn-deal-now" class="ui-pill btn-primary-theme px-6 py-2.5 text-xs sm:text-sm uppercase tracking-wider">
             <span class="material-symbols-rounded text-base">playing_cards</span>
-            <span>Deal</span>
+            <span id="btn-deal-label">Deal</span>
           </button>
         </div>
 
@@ -905,10 +931,13 @@
           <button id="btn-split" class="ui-pill px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm uppercase">
             <span>Split</span><span class="kbd-hint hidden sm:inline text-[10px] opacity-70 font-mono">[P]</span>
           </button>
+          <button id="btn-surrender" class="ui-pill px-3.5 py-2.5 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs sm:text-sm uppercase" title="Late Surrender: forfeit hand and recover 50% of bet">
+            <span>Surrender</span><span class="kbd-hint hidden sm:inline text-[10px] opacity-70 font-mono">[R]</span>
+          </button>
           <button id="btn-early-cashout" class="ui-pill px-4 py-2.5 bg-teal-400 hover:bg-teal-300 text-black text-xs sm:text-sm uppercase">
             <span id="btn-early-cashout-label">Cash Out $0</span>
           </button>
-          <button id="btn-insurance" class="hidden ui-pill px-4 py-2.5 bg-sky-400 text-black text-xs sm:text-sm uppercase">Insurance</button>
+          <button id="btn-insurance" class="hidden ui-pill px-4 py-2.5 bg-sky-400 hover:bg-sky-300 text-black text-xs sm:text-sm uppercase">Insurance</button>
         </div>
 
         <div id="waiting-controls" class="hidden flex items-center gap-3">
@@ -917,7 +946,7 @@
         </div>
       </div>
 
-      <div class="hidden xl:block w-48 shrink-0"></div>
+      <div class="hidden xl:block w-44 shrink-0"></div>
     </footer>
   </div>
 
@@ -942,11 +971,11 @@
   </div>
 
   <!-- =========================================================================
-       STRATEGY COACH & HI-LO CARD COUNTER HUD DRAWER
+       STRATEGY COACH, LIVE ODDS & HI-LO CARD COUNTER HUD DRAWER
        ========================================================================= -->
-  <aside id="strategy-drawer" class="hidden fixed right-4 top-20 z-40 w-72 theme-surface-elevated rounded-3xl p-4 sheet-anim">
+  <aside id="strategy-drawer" class="hidden fixed right-4 top-20 z-40 w-76 max-w-[92vw] theme-surface-elevated rounded-3xl p-4 sheet-anim">
     <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
-      <span class="font-serif text-xs font-extrabold tracking-wider uppercase theme-accent-text">Strategy Coach & Hi-Lo</span>
+      <span class="font-serif text-xs font-extrabold tracking-wider uppercase theme-accent-text">Strategy Coach &amp; Live Odds</span>
       <button id="btn-close-strategy" class="text-slate-400 hover:text-white"><span class="material-symbols-rounded text-lg">close</span></button>
     </div>
     <div class="space-y-3 text-xs">
@@ -954,6 +983,19 @@
         <span class="text-slate-300">Optimal Move:</span>
         <span id="strategy-advice-badge" class="font-mono font-extrabold text-sm theme-accent-text uppercase">WAITING</span>
       </div>
+
+      <!-- Dynamic House Edge & Count Edge -->
+      <div class="grid grid-cols-2 gap-2">
+        <div class="p-2.5 rounded-2xl bg-black/45 border border-white/10">
+          <div class="text-[10px] font-mono text-slate-400">BASE HOUSE EDGE</div>
+          <div id="hud-house-edge" class="font-mono font-extrabold text-sm text-emerald-300">0.35%</div>
+        </div>
+        <div class="p-2.5 rounded-2xl bg-black/45 border border-white/10">
+          <div class="text-[10px] font-mono text-slate-400">LIVE PLAYER EDGE</div>
+          <div id="hud-player-edge" class="font-mono font-extrabold text-sm text-slate-200">-0.35%</div>
+        </div>
+      </div>
+
       <div id="hilo-counter-box" class="grid grid-cols-2 gap-2">
         <div class="p-2.5 rounded-2xl bg-black/45 border border-white/10">
           <div class="text-[10px] font-mono text-slate-400">RUNNING COUNT</div>
@@ -964,6 +1006,7 @@
           <div id="hud-true-count" class="font-mono font-extrabold text-base theme-accent-soft">0.0</div>
         </div>
       </div>
+
       <div class="grid grid-cols-3 gap-1.5 text-center">
         <div class="p-2 rounded-xl bg-emerald-500/15 border border-emerald-400/20">
           <div class="text-[10px] text-emerald-200">WON</div>
@@ -982,6 +1025,47 @@
   </aside>
 
   <!-- =========================================================================
+       MODAL 0: TABLE ODDS, PAYOUTS & FAIR RULES REFERENCE
+       ========================================================================= -->
+  <div id="odds-modal" class="hidden fixed inset-0 z-[68] bg-black/75 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="theme-surface-elevated sheet-anim w-full max-w-lg rounded-t-[32px] sm:rounded-[32px] p-6 max-h-[90dvh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-rounded text-emerald-300 text-2xl">percent</span>
+          <h3 class="font-serif text-xl font-black text-white">TABLE ODDS &amp; RULES</h3>
+        </div>
+        <button id="btn-close-odds" class="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-slate-200"><span class="material-symbols-rounded">close</span></button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div class="p-3.5 rounded-2xl bg-black/45 border border-emerald-400/30 flex items-center justify-between">
+          <div>
+            <div class="text-[10px] font-mono uppercase text-emerald-300">Active Theoretical House Edge</div>
+            <div id="odds-modal-rules-summary" class="text-slate-200 font-semibold mt-0.5">6 Decks • 3:2 Blackjack • S17 • DAS • Late Surrender</div>
+          </div>
+          <div id="odds-modal-edge-val" class="font-mono font-black text-2xl text-emerald-300">0.35%</div>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 space-y-1.5 font-mono">
+          <div class="text-[10px] uppercase theme-accent-text mb-1">Standard Payouts</div>
+          <div class="flex justify-between"><span class="text-slate-300">Natural Blackjack</span><span id="odds-bj-pay" class="theme-accent-soft font-bold">3 to 2 (1.5×)</span></div>
+          <div class="flex justify-between"><span class="text-slate-300">Standard Win</span><span class="text-emerald-300 font-bold">1 to 1 (1.0×)</span></div>
+          <div class="flex justify-between"><span class="text-slate-300">Insurance (Dealer Ace)</span><span class="text-sky-300 font-bold">2 to 1</span></div>
+          <div class="flex justify-between"><span class="text-slate-300">Late Surrender [R]</span><span class="text-slate-200 font-bold">50% Stake Back</span></div>
+          <div class="flex justify-between"><span class="text-slate-300">Early Cash Out</span><span class="text-teal-300 font-bold">Dynamic Fair-EV Offer</span></div>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 space-y-1.5 text-slate-300 leading-relaxed">
+          <div class="text-[10px] font-mono uppercase theme-accent-text">Fairness &amp; Casino Mechanics</div>
+          <p>• <strong class="text-white">Dealer Peek:</strong> When the dealer shows a 10-value card, the dealer immediately peeks for Blackjack so you never lose extra Double or Split wagers to a hidden natural 21.</p>
+          <p>• <strong class="text-white">Accurate Hi-Lo Count:</strong> Hidden hole cards are never counted until flipped face up, and Live Player Edge updates at ~+0.5% per +1 True Count.</p>
+          <p>• <strong class="text-white">Double After Split (DAS):</strong> Allowed on both split hands, with 2-card split 21s treated as standard 21s.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
        MODAL 1: COMPREHENSIVE 4-TAB SETTINGS HUB
        ========================================================================= -->
   <div id="settings-modal" class="hidden fixed inset-0 z-[65] bg-black/75 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4">
@@ -989,23 +1073,23 @@
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-2">
           <span class="material-symbols-rounded theme-accent-text text-2xl">tune</span>
-          <h3 class="font-serif text-xl font-black text-white">SETTINGS & CUSTOMIZATION HUB</h3>
+          <h3 class="font-serif text-xl font-black text-white">SETTINGS &amp; CUSTOMIZATION HUB</h3>
         </div>
         <button id="btn-close-settings" class="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-slate-200"><span class="material-symbols-rounded">close</span></button>
       </div>
 
       <!-- 4 Segmented Tabs -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 p-1 rounded-2xl sm:rounded-full bg-black/50 border border-white/10 mb-5">
-        <button data-settings-tab="visuals" class="settings-tab-btn py-2 px-3 rounded-xl sm:rounded-full text-xs font-bold transition">Visuals & Themes</button>
+        <button data-settings-tab="visuals" class="settings-tab-btn py-2 px-3 rounded-xl sm:rounded-full text-xs font-bold transition">Visuals &amp; Themes</button>
         <button data-settings-tab="gameplay" class="settings-tab-btn py-2 px-3 rounded-xl sm:rounded-full text-xs font-bold transition">Gameplay</button>
-        <button data-settings-tab="audio" class="settings-tab-btn py-2 px-3 rounded-xl sm:rounded-full text-xs font-bold transition">Audio & Music</button>
-        <button data-settings-tab="profile" class="settings-tab-btn py-2 px-3 rounded-xl sm:rounded-full text-xs font-bold transition">Profile & Privacy</button>
+        <button data-settings-tab="audio" class="settings-tab-btn py-2 px-3 rounded-xl sm:rounded-full text-xs font-bold transition">Audio &amp; Music</button>
+        <button data-settings-tab="profile" class="settings-tab-btn py-2 px-3 rounded-xl sm:rounded-full text-xs font-bold transition">Profile &amp; Privacy</button>
       </div>
 
       <!-- TAB 1: VISUALS & THEMES -->
       <div id="settings-tab-visuals" class="space-y-5 text-xs">
         <div>
-          <div class="text-[11px] font-mono uppercase tracking-wider theme-accent-text mb-2">7 Table & Lounge Themes (Instant Live Apply)</div>
+          <div class="text-[11px] font-mono uppercase tracking-wider theme-accent-text mb-2">7 Table &amp; Lounge Themes (Instant Live Apply)</div>
           <div id="theme-swatch-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5"></div>
         </div>
 
@@ -1046,8 +1130,8 @@
       <div id="settings-tab-gameplay" class="hidden space-y-4 text-xs">
         <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-between">
           <div>
-            <div class="font-bold text-white">Animation & Dealing Speed</div>
-            <div class="text-[11px] text-slate-400">Controls card transitions & bot pacing</div>
+            <div class="font-bold text-white">Animation &amp; Dealing Speed</div>
+            <div class="text-[11px] text-slate-400">Controls card transitions &amp; bot pacing</div>
           </div>
           <select id="set-anim-speed" class="bg-slate-900 border border-white/20 rounded-xl px-3 py-1.5 text-white font-semibold">
             <option value="normal">Normal</option>
@@ -1062,7 +1146,7 @@
             <input id="set-auto-rebet" type="checkbox" class="w-4 h-4 accent-amber-400" />
           </label>
           <label class="p-3 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-between cursor-pointer">
-            <span class="font-semibold text-slate-200">Keyboard Shortcuts (H/S/D/P/Space)</span>
+            <span class="font-semibold text-slate-200">Keyboard Shortcuts (H/S/D/P/R/Space)</span>
             <input id="set-kbd-shortcuts" type="checkbox" class="w-4 h-4 accent-amber-400" />
           </label>
           <label class="p-3 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-between cursor-pointer">
@@ -1128,8 +1212,8 @@
 
         <label class="p-3.5 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-between cursor-pointer">
           <div>
-            <div class="font-semibold text-slate-200">Event & Big Win Fanfare Chimes</div>
-            <div class="text-[11px] text-slate-400">Play celebratory brass/chime stings on Blackjacks & Random Events</div>
+            <div class="font-semibold text-slate-200">Event &amp; Big Win Fanfare Chimes</div>
+            <div class="text-[11px] text-slate-400">Play celebratory brass/chime stings on Blackjacks &amp; Random Events</div>
           </div>
           <input id="set-fanfare" type="checkbox" class="w-4 h-4 accent-amber-400" />
         </label>
@@ -1179,9 +1263,13 @@
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-2">
           <span class="material-symbols-rounded theme-accent-text text-2xl">account_balance</span>
-          <h3 class="font-serif text-xl font-black text-white">CASINO CAGE & CASH OUT</h3>
+          <h3 class="font-serif text-xl font-black text-white">CASINO CAGE &amp; CASH OUT</h3>
         </div>
         <button id="btn-close-cashier" class="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-slate-200"><span class="material-symbols-rounded">close</span></button>
+      </div>
+
+      <div id="cage-bet-warning" class="hidden mb-3 px-3.5 py-2 rounded-2xl bg-amber-500/15 border border-amber-400/40 text-amber-200 text-xs">
+        Clear your pending table bet before transferring chips so your wager stays valid.
       </div>
 
       <div class="grid grid-cols-2 gap-3 mb-4">
@@ -1210,8 +1298,8 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-4">
-        <button id="btn-cashout-stay" class="ui-pill btn-primary-theme py-3 px-4 text-xs uppercase">Cash Out & Stay</button>
-        <button id="btn-cashout-leave" class="ui-pill py-3 px-4 bg-rose-600 hover:bg-rose-500 text-white text-xs uppercase">Cash Out All & Leave</button>
+        <button id="btn-cashout-stay" class="ui-pill btn-primary-theme py-3 px-4 text-xs uppercase">Cash Out &amp; Stay</button>
+        <button id="btn-cashout-leave" class="ui-pill py-3 px-4 bg-rose-600 hover:bg-rose-500 text-white text-xs uppercase">Cash Out All &amp; Leave</button>
       </div>
 
       <div class="border-t border-white/10 pt-3.5 space-y-2">
@@ -1240,7 +1328,7 @@
       <div class="space-y-2 font-mono text-xs mb-5 bg-black/45 p-4 rounded-2xl border border-white/10">
         <div class="flex justify-between"><span class="text-slate-400">VIP GUEST</span><span id="v-player" class="text-white font-bold">VIP</span></div>
         <div class="flex justify-between"><span class="text-slate-400">CASHED OUT</span><span id="v-amount" class="theme-accent-text font-extrabold text-sm">$0</span></div>
-        <div class="flex justify-between"><span class="text-slate-400">SESSION P&L</span><span id="v-pnl" class="text-emerald-400 font-bold">+$0</span></div>
+        <div class="flex justify-between"><span class="text-slate-400">SESSION P&amp;L</span><span id="v-pnl" class="text-emerald-400 font-bold">+$0</span></div>
         <div class="flex justify-between"><span class="text-slate-400">HANDS WON / PLAYED</span><span id="v-hands" class="text-slate-200">0 / 0</span></div>
         <div class="flex justify-between"><span class="text-slate-400">NEW SAFE VAULT</span><span id="v-vault" class="theme-accent-soft font-bold">$0</span></div>
       </div>
@@ -1267,9 +1355,9 @@
       </div>
 
       <div class="grid grid-cols-3 gap-1.5 p-1 rounded-full bg-black/55 border border-white/10 mb-5">
-        <button data-admin-tab="rules" class="admin-tab-btn py-2 rounded-full text-xs font-bold transition">Rules & Mode</button>
-        <button data-admin-tab="players" class="admin-tab-btn py-2 rounded-full text-xs font-bold transition">Players & Table</button>
-        <button data-admin-tab="events" class="admin-tab-btn py-2 rounded-full text-xs font-bold transition">Events & Chaos</button>
+        <button data-admin-tab="rules" class="admin-tab-btn py-2 rounded-full text-xs font-bold transition">Rules &amp; Mode</button>
+        <button data-admin-tab="players" class="admin-tab-btn py-2 rounded-full text-xs font-bold transition">Players &amp; Table</button>
+        <button data-admin-tab="events" class="admin-tab-btn py-2 rounded-full text-xs font-bold transition">Events &amp; Chaos</button>
       </div>
 
       <!-- ADMIN TAB 1 -->
@@ -1363,7 +1451,7 @@
         <input id="e2e-passphrase" type="password" placeholder="Enter Vault Passphrase (4+ chars)..."
           class="w-full px-4 py-3 rounded-2xl bg-black/65 border border-indigo-400/40 text-white focus:outline-none focus:border-indigo-300" />
         <div class="grid grid-cols-2 gap-2">
-          <button id="btn-e2e-encrypt" class="ui-pill py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white">Encrypt & Generate</button>
+          <button id="btn-e2e-encrypt" class="ui-pill py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white">Encrypt &amp; Generate</button>
           <button id="btn-e2e-download" class="ui-pill py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white">Download .mcbackup</button>
         </div>
         <div>
@@ -1375,7 +1463,7 @@
             class="w-full p-3 rounded-2xl bg-black/65 border border-white/15 font-mono text-[11px] text-amber-200 focus:outline-none"></textarea>
         </div>
         <div class="grid grid-cols-2 gap-2">
-          <button id="btn-e2e-restore" class="ui-pill btn-primary-theme py-2.5">Decrypt & Restore</button>
+          <button id="btn-e2e-restore" class="ui-pill btn-primary-theme py-2.5">Decrypt &amp; Restore</button>
           <label class="ui-pill py-2.5 bg-white/10 hover:bg-white/20 text-white cursor-pointer">
             <span>Upload .mcbackup</span>
             <input id="e2e-file-input" type="file" accept=".mcbackup,.txt" class="hidden" />
@@ -1391,6 +1479,22 @@
   <script>
     (() => {
       "use strict";
+
+      /* -----------------------------------------------------------------------
+       * 0. SECURITY & UTILITY HELPERS
+       * --------------------------------------------------------------------- */
+      let cardUidSeq = 1;
+      let svgPatSeq = 1;
+      const seenCardUids = new Set();
+
+      function escapeHTML(str) {
+        return String(str ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
 
       /* -----------------------------------------------------------------------
        * 1. THEMES, CARD BACKS, GAMEMODES & RANDOM EVENTS CATALOGS
@@ -1415,7 +1519,7 @@
       const GAMEMODES = {
         classic: {
           id: "classic", name: "Classic Noir", tag: "CLASSIC 3:2",
-          desc: "Balanced 6-deck salon with 3:2 Blackjacks & occasional events.",
+          desc: "Balanced 6-deck salon with 3:2 Blackjacks, Late Surrender & fair events.",
           decks: 6, bjPayout: 1.5, timer: 25, minBet: 5, maxBet: 5000, hitSoft17: false, eventFreq: 0.30
         },
         chaos: {
@@ -1425,7 +1529,7 @@
         },
         highroller: {
           id: "highroller", name: "High Roller VIP", tag: "$100–$10K",
-          desc: "High-limit VIP salon with 4-deck shoe and elite stakes.",
+          desc: "High-limit VIP salon with 4-deck shoe (lower house edge) & elite stakes.",
           decks: 4, bjPayout: 1.5, timer: 30, minBet: 100, maxBet: 10000, hitSoft17: false, eventFreq: 0.40
         },
         blitz: {
@@ -1450,7 +1554,7 @@
       /* -----------------------------------------------------------------------
        * 2. PERSISTENT PROFILE & COMPREHENSIVE SETTINGS STATE
        * --------------------------------------------------------------------- */
-      const STORAGE_KEY = "monte_carlo_noir_ultimate_v2";
+      const STORAGE_KEY = "monte_carlo_noir_ultimate_v3";
       const DEFAULT_SETTINGS = {
         theme: "noir",
         cardBack: "obsidian",
@@ -1482,7 +1586,7 @@
         avatar: "👑",
         tableStack: 2500,
         safeVault: 1000,
-        sessionBuyIn: 2500,
+        sessionStartTotal: 3500,
         streak: 0,
         stats: { wins: 0, pushes: 0, losses: 0, handsPlayed: 0 },
         settings: { ...DEFAULT_SETTINGS }
@@ -1490,17 +1594,28 @@
 
       let guardrailDismissed = false;
 
+      function getSessionNetPnL() {
+        const currentTotal = (Number(profile.tableStack) || 0) + (Number(profile.safeVault) || 0);
+        const startTotal = Number.isFinite(profile.sessionStartTotal) ? profile.sessionStartTotal : 3500;
+        return Math.floor(currentTotal - startTotal);
+      }
+
       function loadProfile() {
         try {
-          const raw = localStorage.getItem(STORAGE_KEY);
+          const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem("monte_carlo_noir_ultimate_v2");
           if (raw) {
             const p = JSON.parse(raw);
             profile = {
               ...profile,
               ...p,
+              tableStack: Math.max(0, Number(p.tableStack) || 0),
+              safeVault: Math.max(0, Number(p.safeVault) || 0),
               stats: { ...profile.stats, ...(p.stats || {}) },
               settings: { ...DEFAULT_SETTINGS, ...(p.settings || {}) }
             };
+            if (!Number.isFinite(profile.sessionStartTotal)) {
+              profile.sessionStartTotal = profile.tableStack + profile.safeVault;
+            }
           }
         } catch (e) { console.warn("Local storage load fallback", e); }
       }
@@ -1516,6 +1631,19 @@
         if (total >= 10000) return "PLATINUM VIP";
         if (total >= 5000) return "EMERALD ROLLER";
         return "GOLD VIP";
+      }
+
+      function computeHouseEdge(decks = 6, bjPayout = 1.5, hitSoft17 = false) {
+        // Standard Blackjack house edge approximation (S17, DAS, Late Surrender, Dealer Peek)
+        let edge = 0.43; // 6-deck S17 3:2 DAS base
+        if (decks <= 1) edge -= 0.48;
+        else if (decks === 2) edge -= 0.19;
+        else if (decks === 4) edge -= 0.06;
+        else if (decks >= 8) edge += 0.02;
+        if (hitSoft17) edge += 0.22;
+        if (bjPayout < 1.4) edge += 1.39; // 6:5 penalty
+        edge -= 0.08; // Late Surrender benefit
+        return Math.max(0.02, Number(edge.toFixed(2)));
       }
 
       function applySettingsToDOM() {
@@ -1534,13 +1662,11 @@
         const insc = document.getElementById("table-inscriptions-svg");
         if (insc) insc.style.display = s.inscriptions ? "block" : "none";
 
-        // Coach & Hi-Lo boxes
         document.getElementById("hilo-counter-box").style.display = s.showHiLo ? "grid" : "none";
         document.querySelectorAll(".kbd-hint").forEach(el => {
           el.style.display = s.keyboardShortcuts ? "" : "none";
         });
 
-        // Sync Main Menu quick settings UI
         const thObj = THEMES.find(t => t.id === s.theme) || THEMES[0];
         document.getElementById("lobby-theme-name-pill").textContent = thObj.name;
         document.getElementById("quick-theme-select").value = s.theme;
@@ -1569,6 +1695,15 @@
         document.getElementById("lobby-vault-val").textContent = `$${Math.floor(profile.safeVault).toLocaleString()}`;
         document.getElementById("hud-bankroll").textContent = `$${Math.floor(profile.tableStack).toLocaleString()}`;
         document.getElementById("hud-vault").textContent = `$${Math.floor(profile.safeVault).toLocaleString()}`;
+
+        const pnl = getSessionNetPnL();
+        const pnlEl = document.getElementById("hud-session-pnl");
+        if (pnlEl) {
+          pnlEl.textContent = `${pnl >= 0 ? "+" : "-"}$${Math.abs(pnl).toLocaleString()}`;
+          pnlEl.className = `font-mono font-extrabold text-xs ${
+            pnl > 0 ? "text-emerald-400" : pnl < 0 ? "text-rose-400" : "text-slate-300"
+          }`;
+        }
         checkBankrollGuardrails();
       }
 
@@ -1579,10 +1714,10 @@
           banner.classList.add("hidden");
           return;
         }
-        const net = (profile.tableStack + profile.safeVault) - (profile.sessionBuyIn + 1000);
+        const net = getSessionNetPnL();
         if (net <= -Math.abs(s.stopLoss)) {
           document.getElementById("guardrail-banner-text").textContent =
-            `Stop-Loss Guardrail hit (${net >= 0 ? "+" : "-"}$${Math.abs(net).toLocaleString()}). Take a breather or lock remaining chips in Vault.`;
+            `Stop-Loss Guardrail hit (-$${Math.abs(net).toLocaleString()}). Take a breather or lock remaining chips in Vault.`;
           banner.classList.remove("hidden");
         } else if (net >= Math.abs(s.winGoal)) {
           document.getElementById("guardrail-banner-text").textContent =
@@ -1656,8 +1791,11 @@
         }
 
         cycleTrack() {
+          const wasStarted = this.started;
           this.init();
-          this.trackIdx = (this.trackIdx + 1) % this.tracks.length;
+          if (wasStarted || this.tracks[this.trackIdx].id === "off") {
+            this.trackIdx = (this.trackIdx + 1) % this.tracks.length;
+          }
           const tr = this.tracks[this.trackIdx];
           profile.settings.musicTrack = tr.id;
           saveProfile();
@@ -1749,10 +1887,10 @@
 
         playWin(isBJ = false) {
           if (!this.sfxEnabled) return;
-          if (isBJ && !profile.settings.fanfare) return;
+          const useFanfare = isBJ && profile.settings.fanfare;
           this.init();
-          const notes = isBJ ? [523.25, 659.25, 783.99, 1046.5, 1318.5] : [523.25, 659.25, 783.99];
-          notes.forEach((n, i) => this.tone(n, 0.42, isBJ ? "triangle" : "sine", 0.14, this.sfxGain, i * 0.08));
+          const notes = useFanfare ? [523.25, 659.25, 783.99, 1046.5, 1318.5] : [523.25, 659.25, 783.99];
+          notes.forEach((n, i) => this.tone(n, 0.42, useFanfare ? "triangle" : "sine", 0.14, this.sfxGain, i * 0.08));
         }
 
         playBust() {
@@ -1865,7 +2003,7 @@
       canvasLoop();
 
       /* -----------------------------------------------------------------------
-       * 5. BLACKJACK CORE MATH, BUST RISK %, EARLY CASHOUT & BASIC STRATEGY
+       * 5. BLACKJACK CORE MATH, FAIR EV CASHOUT, BUST RISK % & BASIC STRATEGY
        * --------------------------------------------------------------------- */
       const SUITS = [
         { sym: "♠", color: "text-[#111318]" },
@@ -1878,10 +2016,19 @@
       function buildShoe(decks = 6) {
         const arr = [];
         for (let d = 0; d < decks; d++) {
-          for (const s of SUITS) for (const r of RANKS) arr.push({ rank: r, suit: s.sym, color: s.color });
+          for (const s of SUITS) {
+            for (const r of RANKS) {
+              arr.push({ uid: cardUidSeq++, rank: r, suit: s.sym, color: s.color });
+            }
+          }
+        }
+        // Cryptographically strong Fisher-Yates shuffle when available
+        const randBuf = new Uint32Array(arr.length);
+        if (window.crypto && window.crypto.getRandomValues) {
+          window.crypto.getRandomValues(randBuf);
         }
         for (let i = arr.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
+          const j = window.crypto ? (randBuf[i] % (i + 1)) : Math.floor(Math.random() * (i + 1));
           [arr[i], arr[j]] = [arr[j], arr[i]];
         }
         return arr;
@@ -1893,7 +2040,7 @@
         return parseInt(rank, 10);
       }
 
-      function evaluateHand(cards) {
+      function evaluateHand(cards, isSplitHand = false) {
         if (!cards || !cards.length) return { total: 0, isSoft: false, isBlackjack: false, isBust: false, label: "0" };
         let sum = 0, aces = 0, vis = 0;
         for (const c of cards) {
@@ -1904,7 +2051,7 @@
         }
         while (sum > 21 && aces > 0) { sum -= 10; aces--; }
         const isSoft = aces > 0 && sum <= 21;
-        const isBlackjack = vis === 2 && sum === 21;
+        const isBlackjack = !isSplitHand && vis === 2 && sum === 21;
         const isBust = sum > 21;
         let label = `${sum}`;
         if (isBlackjack) label = "BLACKJACK";
@@ -1913,58 +2060,63 @@
         return { total: sum, isSoft, isBlackjack, isBust, label };
       }
 
-      function computeBustRiskPercent(cards, shoe) {
+      function computeBustRiskPercent(cards) {
+        // Uses exact 13-rank distribution (no hidden hole-card or shoe peeking leak)
         const ev = evaluateHand(cards);
         if (ev.isBust) return 100;
         if (ev.isSoft || ev.total <= 11) return 0;
         const maxSafe = 21 - ev.total;
-        if (shoe && shoe.length > 0) {
-          let bustCount = 0;
-          for (const c of shoe) {
-            const v = c.rank === "A" ? 1 : cardVal(c.rank);
-            if (v > maxSafe) bustCount++;
-          }
-          return Math.round((bustCount / shoe.length) * 100);
-        }
-        // Standard 13-rank approximation fallback
-        const bustRanks = Math.max(0, 13 - maxSafe);
+        const safeRanks = Math.max(0, Math.min(13, maxSafe)); // A=1 through maxSafe
+        const bustRanks = 13 - safeRanks;
         return Math.min(100, Math.round((bustRanks / 13) * 100));
       }
 
       function computeEarlyCashOut(hand, dealerUp) {
-        if (!hand || !dealerUp) return 0;
-        const ev = evaluateHand(hand.cards);
+        // Fair-EV buyout offer (~4% house convenience margin, never exceeds fair win payout)
+        if (!hand || !dealerUp || dealerUp.hidden) return 0;
+        const ev = evaluateHand(hand.cards, hand.isSplit);
         if (ev.isBust) return 0;
         const d = cardVal(dealerUp.rank);
+        const stake = hand.wagered || hand.bet;
         let mult = 0.5;
-        if (ev.total === 21) mult = 1.65;
-        else if (ev.total === 20) mult = d >= 10 ? 1.28 : 1.48;
-        else if (ev.total === 19) mult = d >= 10 ? 1.05 : 1.30;
-        else if (ev.total === 18) mult = d <= 6 ? 1.15 : 0.88;
-        else if (ev.total === 17) mult = d <= 6 ? 0.95 : 0.72;
-        else if (ev.total >= 12 && ev.total <= 16) mult = d <= 6 ? 0.82 : 0.50;
-        else if (ev.total === 11) mult = 1.12;
-        else if (ev.total === 10) mult = 0.96;
-        else mult = 0.78;
-        return Math.max(Math.floor(hand.bet * 0.5), Math.floor(hand.bet * mult));
+        if (ev.total === 21) mult = d >= 10 ? 1.55 : 1.72;
+        else if (ev.total === 20) mult = d === 11 ? 1.15 : d === 10 ? 1.24 : 1.50;
+        else if (ev.total === 19) mult = d >= 10 ? 0.94 : d <= 6 ? 1.32 : 1.16;
+        else if (ev.total === 18) mult = d >= 9 ? 0.72 : d <= 6 ? 1.14 : 0.96;
+        else if (ev.total === 17) mult = d >= 9 ? 0.56 : d <= 6 ? 0.92 : 0.74;
+        else if (ev.total >= 12 && ev.total <= 16) mult = d <= 6 ? 0.76 : 0.50;
+        else if (ev.total === 11) mult = d === 11 ? 0.98 : 1.08;
+        else if (ev.total === 10) mult = d >= 10 ? 0.84 : 1.02;
+        else mult = d <= 6 ? 0.86 : 0.72;
+        return Math.max(Math.floor(stake * 0.5), Math.floor(stake * mult));
       }
 
-      function getBasicStrategy(cards, dealerUp, canSplit, canDouble) {
-        if (!cards || cards.length < 2 || !dealerUp) return "PLACE BET";
+      function getBasicStrategy(cards, dealerUp, canSplit, canDouble, canSurrender = false) {
+        if (!cards || cards.length < 2 || !dealerUp || dealerUp.hidden) return "PLACE BET";
         const ev = evaluateHand(cards);
         if (ev.isBlackjack) return "STAND (21!)";
         const d = cardVal(dealerUp.rank);
+
+        // Late Surrender check (hard 16 vs 9/10/A, hard 15 vs 10)
+        if (canSurrender && !ev.isSoft && cards.length === 2) {
+          if (ev.total === 16 && (d === 9 || d === 10 || d === 11)) return "SURRENDER";
+          if (ev.total === 15 && d === 10) return "SURRENDER";
+        }
+
         if (canSplit && cards.length === 2) {
           const r = cards[0].rank;
           if (r === "A" || r === "8") return "SPLIT";
           if (["2", "3", "7"].includes(r) && d <= 7) return "SPLIT";
+          if (r === "4" && (d === 5 || d === 6)) return "SPLIT";
           if (r === "6" && d <= 6) return "SPLIT";
           if (r === "9" && ![7, 10, 11].includes(d)) return "SPLIT";
         }
         if (ev.isSoft) {
           if (ev.total >= 19) return "STAND";
           if (ev.total === 18) return canDouble && d >= 3 && d <= 6 ? "DOUBLE" : (d <= 8 ? "STAND" : "HIT");
-          if (canDouble && ev.total >= 15 && ev.total <= 17 && d >= 4 && d <= 6) return "DOUBLE";
+          if (canDouble && ev.total === 17 && d >= 3 && d <= 6) return "DOUBLE";
+          if (canDouble && (ev.total === 15 || ev.total === 16) && d >= 4 && d <= 6) return "DOUBLE";
+          if (canDouble && (ev.total === 13 || ev.total === 14) && (d === 5 || d === 6)) return "DOUBLE";
           return "HIT";
         }
         if (ev.total >= 17) return "STAND";
@@ -1977,11 +2129,12 @@
       }
 
       /* -----------------------------------------------------------------------
-       * 6. PEERJS MULTIPLAYER & GAME ENGINE
+       * 6. PEERJS MULTIPLAYER & AUTHORITATIVE GAME ENGINE
        * --------------------------------------------------------------------- */
       let selectedLobbyMode = "classic";
       let isSoloMode = false;
       let isHost = false;
+      let peerConnected = false;
       let roomCode = null;
       let roomState = null;
       let peer = null;
@@ -1990,6 +2143,7 @@
       let loopTimer = null;
       let lastBetAmount = 100;
       let lastShownEventTs = 0;
+      let clientPrevPhase = null;
 
       function showSnackbar(msg, tone = "normal") {
         const box = document.getElementById("snackbar-container");
@@ -2016,14 +2170,25 @@
             <span class="material-symbols-rounded text-3xl shrink-0">${evObj.icon}</span>
             <div>
               <div class="text-[10px] font-mono font-extrabold uppercase tracking-[0.2em] opacity-80">RANDOM CASINO EVENT</div>
-              <div class="font-serif text-lg font-black leading-tight">${evObj.name}</div>
-              <div class="text-xs font-semibold opacity-95">${evObj.desc}</div>
+              <div class="font-serif text-lg font-black leading-tight">${escapeHTML(evObj.name)}</div>
+              <div class="text-xs font-semibold opacity-95">${escapeHTML(evObj.desc)}</div>
             </div>
           </div>
         `;
       }
 
       function copyTextSafe(text, label) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(
+            () => showSnackbar(`${label} copied!`),
+            () => fallbackCopy(text, label)
+          );
+        } else {
+          fallbackCopy(text, label);
+        }
+      }
+
+      function fallbackCopy(text, label) {
         const ta = document.createElement("textarea");
         ta.value = text;
         ta.style.position = "fixed"; ta.style.opacity = "0";
@@ -2042,26 +2207,55 @@
       }
 
       function makeSeat(id, name, avatar, bankroll, isBot = false) {
-        return { id, name, avatar, bankroll, isBot, pendingBet: 0, insuranceBet: 0, streak: 0, hands: [], emote: null };
+        const cleanName = String(name || "Royal Guest").trim().slice(0, 16) || "Royal Guest";
+        const cleanAvatar = AVATARS.includes(avatar) ? avatar : "👑";
+        return {
+          id,
+          name: cleanName,
+          avatar: cleanAvatar,
+          bankroll: Math.max(0, Math.floor(Number(bankroll) || 0)),
+          isBot,
+          pendingBet: 0,
+          insuranceBet: 0,
+          streak: 0,
+          hands: [],
+          emote: null
+        };
       }
 
       function createRoomState(code, modeId, hostSeat) {
         const m = GAMEMODES[modeId] || GAMEMODES.classic;
+        const shoe = buildShoe(m.decks);
         return {
           roomCode: code, hostId: hostSeat.id, mode: m.id,
           decks: m.decks, bjPayout: m.bjPayout, turnTimer: m.timer,
           minBet: m.minBet, maxBet: m.maxBet, hitSoft17: m.hitSoft17,
           eventFreq: m.eventFreq, paused: false, phase: "BETTING",
           phaseEndsAt: Date.now() + 20000, activeSeatIndex: 0, activeHandIndex: 0,
-          shoe: buildShoe(m.decks), discardCount: 0, runningCount: 0,
+          shoe, shoeCount: shoe.length, discardCount: 0, runningCount: 0,
           dealerHand: [], activeEvent: null, eventTs: 0,
           ticker: `Welcome to ${m.name}! Place your chips to deal.`,
           seats: [hostSeat, null, null, null]
         };
       }
 
+      function sanitizeStateForClient(state) {
+        // Strip raw shoe array and redact hidden dealer hole card for multiplayer fairness
+        return {
+          ...state,
+          shoe: [],
+          shoeCount: state.shoe ? state.shoe.length : (state.shoeCount || 0),
+          dealerHand: (state.dealerHand || []).map(c =>
+            c.hidden ? { uid: c.uid, hidden: true } : c
+          )
+        };
+      }
+
       function broadcastState() {
         if (!roomState) return;
+        if (roomState.shoe && roomState.shoe.length > 0) {
+          roomState.shoeCount = roomState.shoe.length;
+        }
         const me = roomState.seats.find(s => s && s.id === profile.id);
         if (me) {
           profile.tableStack = me.bankroll;
@@ -2070,7 +2264,7 @@
         }
         renderTable();
         if (isHost && !isSoloMode) {
-          const payload = { type: "STATE", state: roomState };
+          const payload = { type: "STATE", state: sanitizeStateForClient(roomState) };
           clientConns.forEach(c => { if (c && c.open) c.send(payload); });
         }
       }
@@ -2080,7 +2274,14 @@
         else if (hostConn && hostConn.open) hostConn.send({ type: "ACTION", playerId: profile.id, action });
       }
 
-      function drawCard(state) {
+      function updateHiLoForCard(state, card) {
+        if (!card || card.hidden) return;
+        const v = cardVal(card.rank);
+        if (v >= 2 && v <= 6) state.runningCount++;
+        else if (v === 10 || card.rank === "A") state.runningCount--;
+      }
+
+      function drawCard(state, countCard = true) {
         if (!state.shoe || state.shoe.length < 30) {
           state.shoe = buildShoe(state.decks || 6);
           state.discardCount = 0;
@@ -2088,10 +2289,9 @@
           state.ticker = `Fresh ${state.decks}-deck shoe shuffled!`;
         }
         const c = state.shoe.pop();
+        state.shoeCount = state.shoe.length;
         state.discardCount = (state.discardCount || 0) + 1;
-        const v = cardVal(c.rank);
-        if (v >= 2 && v <= 6) state.runningCount++;
-        else if (v === 10 || c.rank === "A") state.runningCount--;
+        if (countCard) updateHiLoForCard(state, c);
         return c;
       }
 
@@ -2103,29 +2303,68 @@
         state.activeEvent = evId;
         state.eventTs = Date.now();
         state.ticker = `EVENT: ${ev.name} — ${ev.desc}`;
-        if (evId === "chip_rain") state.seats.forEach(s => { if (s) s.bankroll += 250; });
-        else if (evId === "dealers_slip" && state.dealerHand.length >= 2) state.dealerHand.forEach(c => delete c.hidden);
+        if (evId === "chip_rain") {
+          state.seats.forEach(s => { if (s) s.bankroll += 250; });
+        } else if (evId === "dealers_slip" && state.dealerHand.length >= 2) {
+          state.dealerHand.forEach(c => {
+            if (c.hidden) {
+              delete c.hidden;
+              updateHiLoForCard(state, c);
+            }
+          });
+        }
+      }
+
+      function removeSeatSafely(idx) {
+        if (!roomState || idx < 0 || idx >= roomState.seats.length) return;
+        const wasActive = roomState.phase === "PLAYER_TURNS" && roomState.activeSeatIndex === idx;
+        roomState.seats[idx] = null;
+        if (wasActive) {
+          advanceTurn();
+          broadcastState();
+          scheduleBotTurn();
+        } else {
+          broadcastState();
+        }
       }
 
       function handleAuthoritativeAction(playerId, action) {
-        if (!roomState) return;
+        if (!roomState || !action) return;
         const idx = roomState.seats.findIndex(s => s && s.id === playerId);
         const seat = idx !== -1 ? roomState.seats[idx] : null;
 
         if (action.kind === "BET" && roomState.phase === "BETTING" && seat) {
+          const amt = Math.floor(Number(action.amount) || 0);
+          if (amt <= 0) return;
           const effMax = roomState.activeEvent === "high_stakes_surge" ? roomState.maxBet * 2 : roomState.maxBet;
-          if (seat.bankroll - seat.pendingBet < action.amount) return;
-          if (seat.pendingBet + action.amount > effMax) return;
-          seat.pendingBet += action.amount;
+          if (seat.bankroll - seat.pendingBet < amt) return;
+          if (seat.pendingBet + amt > effMax) return;
+          seat.pendingBet += amt;
+          if (seat.id === profile.id) lastBetAmount = seat.pendingBet;
           audio.playChip();
+          broadcastState();
+        } else if (action.kind === "SET_BET" && roomState.phase === "BETTING" && seat) {
+          const effMax = roomState.activeEvent === "high_stakes_surge" ? roomState.maxBet * 2 : roomState.maxBet;
+          const amt = Math.max(0, Math.min(Math.floor(Number(action.amount) || 0), seat.bankroll, effMax));
+          seat.pendingBet = amt;
+          if (seat.id === profile.id && amt > 0) lastBetAmount = amt;
+          if (amt > 0) audio.playChip();
           broadcastState();
         } else if (action.kind === "CLEAR_BET" && roomState.phase === "BETTING" && seat) {
           seat.pendingBet = 0;
           broadcastState();
         } else if (action.kind === "REBET" && roomState.phase === "BETTING" && seat) {
-          const amt = Math.min(action.amount, seat.bankroll, roomState.maxBet);
-          if (amt > 0) { seat.pendingBet = amt; audio.playChip(); broadcastState(); }
+          const effMax = roomState.activeEvent === "high_stakes_surge" ? roomState.maxBet * 2 : roomState.maxBet;
+          const amt = Math.min(Math.floor(Number(action.amount) || 0), seat.bankroll, effMax);
+          if (amt > 0) {
+            seat.pendingBet = amt;
+            if (seat.id === profile.id) lastBetAmount = amt;
+            audio.playChip();
+            broadcastState();
+          }
         } else if (action.kind === "DEAL" && roomState.phase === "BETTING") {
+          // Only Host (or Solo) can trigger immediate Deal
+          if (playerId !== roomState.hostId && !isSoloMode) return;
           startDealingRound();
         } else if (action.kind === "HIT" && roomState.phase === "PLAYER_TURNS" && idx === roomState.activeSeatIndex) {
           doHit(idx);
@@ -2135,43 +2374,65 @@
           doDouble(idx);
         } else if (action.kind === "SPLIT" && roomState.phase === "PLAYER_TURNS" && idx === roomState.activeSeatIndex) {
           doSplit(idx);
+        } else if (action.kind === "SURRENDER" && roomState.phase === "PLAYER_TURNS" && idx === roomState.activeSeatIndex) {
+          doSurrender(idx);
         } else if (action.kind === "INSURANCE" && roomState.phase === "PLAYER_TURNS" && idx === roomState.activeSeatIndex) {
           doInsurance(idx);
         } else if (action.kind === "EARLY_CASHOUT" && roomState.phase === "PLAYER_TURNS" && idx === roomState.activeSeatIndex) {
           doEarlyCashOut(idx);
         } else if (action.kind === "EMOTE" && seat) {
+          const allowed = ["🔥", "💎", "👑", "🥂", "💀"];
+          if (!allowed.includes(action.symbol)) return;
           seat.emote = { symbol: action.symbol, ts: Date.now() };
           broadcastState();
         } else if (action.kind === "BANK_SYNC" && seat) {
-          seat.bankroll = Math.max(0, Math.floor(action.newStack));
+          const clean = Math.floor(Number(action.newStack));
+          if (!Number.isFinite(clean) || clean < 0) return;
+          // Guard against negative/duplication exploit: clear pendingBet if newStack < pendingBet
+          seat.bankroll = Math.min(clean, 10000000);
+          if (seat.pendingBet > seat.bankroll) seat.pendingBet = 0;
           broadcastState();
         } else if (action.kind === "PROFILE_SYNC" && seat) {
-          seat.name = action.name; seat.avatar = action.avatar;
+          seat.name = String(action.name || "Royal Guest").trim().slice(0, 16) || "Royal Guest";
+          seat.avatar = AVATARS.includes(action.avatar) ? action.avatar : seat.avatar;
           broadcastState();
         }
       }
 
       function startDealingRound() {
-        if (!roomState || roomState.paused) return;
+        if (!roomState || roomState.paused || roomState.phase !== "BETTING") return;
+
+        // Enforce minBet for any human player who placed a bet
+        for (const s of roomState.seats) {
+          if (s && !s.isBot && s.pendingBet > 0 && s.pendingBet < roomState.minBet) {
+            showSnackbar(`Minimum table bet is $${roomState.minBet.toLocaleString()}.`, "error");
+            return;
+          }
+        }
+
         roomState.seats.forEach(s => {
           if (!s) return;
           if (s.isBot && s.bankroll >= roomState.minBet) {
             const opts = [roomState.minBet, roomState.minBet * 2, Math.max(50, roomState.minBet * 4)];
             s.pendingBet = Math.min(opts[Math.floor(Math.random() * opts.length)], s.bankroll, roomState.maxBet);
           }
-          if (s.pendingBet > 0) {
+          // Strictly clamp pendingBet to available bankroll
+          if (s.pendingBet > s.bankroll) s.pendingBet = 0;
+
+          if (s.pendingBet >= roomState.minBet) {
             if (s.id === profile.id) lastBetAmount = s.pendingBet;
             s.bankroll -= s.pendingBet;
-            s.hands = [{ cards: [], bet: s.pendingBet, status: "PLAYING", payout: 0 }];
+            s.hands = [{ cards: [], bet: s.pendingBet, wagered: s.pendingBet, isSplit: false, status: "PLAYING", payout: 0 }];
             s.pendingBet = 0;
             s.insuranceBet = 0;
           } else {
+            s.pendingBet = 0;
             s.hands = [];
           }
         });
 
         if (!roomState.seats.some(s => s && s.hands.length > 0)) {
-          showSnackbar("Place a bet before dealing!", "error");
+          showSnackbar(`Place at least a $${roomState.minBet.toLocaleString()} bet before dealing!`, "error");
           return;
         }
 
@@ -2182,19 +2443,30 @@
         roomState.dealerHand = [];
         for (let r = 0; r < 2; r++) {
           for (const s of roomState.seats) {
-            if (s && s.hands.length > 0) s.hands[0].cards.push(drawCard(roomState));
+            if (s && s.hands.length > 0) s.hands[0].cards.push(drawCard(roomState, true));
           }
-          const dc = drawCard(roomState);
-          if (r === 1 && roomState.activeEvent !== "dealers_slip") dc.hidden = true;
+          const isHole = (r === 1 && roomState.activeEvent !== "dealers_slip");
+          const dc = drawCard(roomState, !isHole);
+          if (isHole) dc.hidden = true;
           roomState.dealerHand.push(dc);
         }
         audio.playCard();
 
         roomState.seats.forEach(s => {
-          if (s && s.hands.length > 0 && evaluateHand(s.hands[0].cards).isBlackjack) {
+          if (s && s.hands.length > 0 && evaluateHand(s.hands[0].cards, false).isBlackjack) {
             s.hands[0].status = "BLACKJACK";
           }
         });
+
+        // Fair Vegas Dealer Peek: if dealer upcard is a 10-value card and hole card is Ace -> immediate Dealer Blackjack!
+        const upCard = roomState.dealerHand[0];
+        const holeCard = roomState.dealerHand[1];
+        if (upCard && holeCard && cardVal(upCard.rank) === 10 && holeCard.rank === "A") {
+          roomState.ticker = "Dealer peeks... NATURAL BLACKJACK!";
+          resolveDealerAndPayouts();
+          broadcastState();
+          return;
+        }
 
         roomState.phase = "PLAYER_TURNS";
         roomState.activeSeatIndex = 0;
@@ -2208,7 +2480,8 @@
       }
 
       function advanceTurn() {
-        for (let sIdx = roomState.activeSeatIndex; sIdx < 4; sIdx++) {
+        if (!roomState) return;
+        for (let sIdx = Math.max(0, roomState.activeSeatIndex); sIdx < 4; sIdx++) {
           const s = roomState.seats[sIdx];
           if (!s || !s.hands.length) continue;
           const startH = sIdx === roomState.activeSeatIndex ? roomState.activeHandIndex : 0;
@@ -2230,12 +2503,15 @@
         if (s && s.isBot) {
           const delay = profile.settings.animSpeed === "turbo" ? 260 : profile.settings.animSpeed === "fast" ? 500 : 820;
           setTimeout(() => {
-            if (!roomState || roomState.phase !== "PLAYER_TURNS") return;
+            if (!roomState || roomState.phase !== "PLAYER_TURNS" || roomState.paused) return;
             const cur = roomState.seats[roomState.activeSeatIndex];
             if (!cur || !cur.isBot) return;
             const h = cur.hands[roomState.activeHandIndex];
-            const adv = getBasicStrategy(h.cards, roomState.dealerHand[0], false, false);
-            if (adv.includes("HIT") || adv.includes("DOUBLE")) doHit(roomState.activeSeatIndex);
+            if (!h || h.status !== "PLAYING") return;
+            const canDbl = h.cards.length === 2 && cur.bankroll >= h.bet;
+            const adv = getBasicStrategy(h.cards, roomState.dealerHand[0], false, canDbl, false);
+            if (adv === "DOUBLE" && canDbl) doDouble(roomState.activeSeatIndex);
+            else if (adv.includes("HIT") || adv.includes("DOUBLE")) doHit(roomState.activeSeatIndex);
             else doStand(roomState.activeSeatIndex);
           }, delay);
         }
@@ -2243,11 +2519,12 @@
 
       function doHit(sIdx) {
         const s = roomState.seats[sIdx];
+        if (!s) return;
         const h = s.hands[roomState.activeHandIndex];
         if (!h || h.status !== "PLAYING") return;
-        h.cards.push(drawCard(roomState));
+        h.cards.push(drawCard(roomState, true));
         audio.playCard();
-        const ev = evaluateHand(h.cards);
+        const ev = evaluateHand(h.cards, h.isSplit);
         if (ev.isBust) {
           h.status = "BUST";
           roomState.ticker = `${s.name} busted (${ev.total})!`;
@@ -2266,10 +2543,12 @@
 
       function doStand(sIdx, timedOut = false) {
         const s = roomState.seats[sIdx];
-        const h = s.hands[roomState.activeHandIndex];
-        if (h && h.status === "PLAYING") {
-          h.status = "STAND";
-          roomState.ticker = timedOut ? `${s.name} auto-stood.` : `${s.name} stands.`;
+        if (s) {
+          const h = s.hands[roomState.activeHandIndex];
+          if (h && h.status === "PLAYING") {
+            h.status = "STAND";
+            roomState.ticker = timedOut ? `${s.name} auto-stood.` : `${s.name} stands.`;
+          }
         }
         advanceTurn();
         broadcastState();
@@ -2278,16 +2557,20 @@
 
       function doDouble(sIdx) {
         const s = roomState.seats[sIdx];
+        if (!s) return;
         const h = s.hands[roomState.activeHandIndex];
         const isFree = roomState.activeEvent === "free_double";
-        if (!h || h.cards.length !== 2 || (!isFree && s.bankroll < h.bet)) return;
-        if (!isFree) s.bankroll -= h.bet;
+        if (!h || h.status !== "PLAYING" || h.cards.length !== 2 || (!isFree && s.bankroll < h.bet)) return;
+        if (!isFree) {
+          s.bankroll -= h.bet;
+          h.wagered = (h.wagered || h.bet) + h.bet;
+        }
         h.bet *= 2;
-        h.cards.push(drawCard(roomState));
+        h.cards.push(drawCard(roomState, true));
         audio.playChip(); audio.playCard();
-        const ev = evaluateHand(h.cards);
+        const ev = evaluateHand(h.cards, h.isSplit);
         h.status = ev.isBust ? "BUST" : "STAND";
-        roomState.ticker = isFree ? `${s.name} used FREE DOUBLE DOWN!` : `${s.name} doubled to $${h.bet}!`;
+        roomState.ticker = isFree ? `${s.name} used FREE DOUBLE DOWN!` : `${s.name} doubled to $${h.bet.toLocaleString()}!`;
         if (ev.isBust && s.id === profile.id) { audio.playBust(); flashEdge("bust"); }
         advanceTurn();
         broadcastState();
@@ -2296,36 +2579,65 @@
 
       function doSplit(sIdx) {
         const s = roomState.seats[sIdx];
+        if (!s) return;
         const h = s.hands[0];
-        if (!h || s.hands.length > 1 || h.cards.length !== 2 || s.bankroll < h.bet) return;
+        if (!h || h.status !== "PLAYING" || s.hands.length > 1 || h.cards.length !== 2) return;
+        if (cardVal(h.cards[0].rank) !== cardVal(h.cards[1].rank)) return;
+        if (s.bankroll < h.bet) return;
+
         s.bankroll -= h.bet;
         const [c1, c2] = h.cards;
-        s.hands = [
-          { cards: [c1, drawCard(roomState)], bet: h.bet, status: "PLAYING", payout: 0 },
-          { cards: [c2, drawCard(roomState)], bet: h.bet, status: "PLAYING", payout: 0 }
-        ];
+        const hand1 = { cards: [c1, drawCard(roomState, true)], bet: h.bet, wagered: h.bet, isSplit: true, status: "PLAYING", payout: 0 };
+        const hand2 = { cards: [c2, drawCard(roomState, true)], bet: h.bet, wagered: h.bet, isSplit: true, status: "PLAYING", payout: 0 };
+        if (evaluateHand(hand1.cards, true).total === 21) hand1.status = "STAND";
+        if (evaluateHand(hand2.cards, true).total === 21) hand2.status = "STAND";
+        s.hands = [hand1, hand2];
+        roomState.phaseEndsAt = Date.now() + (roomState.turnTimer * 1000);
         audio.playChip(); audio.playCard();
         roomState.ticker = `${s.name} split into 2 hands!`;
+        advanceTurn();
         broadcastState();
+        scheduleBotTurn();
+      }
+
+      function doSurrender(sIdx) {
+        const s = roomState.seats[sIdx];
+        if (!s) return;
+        const h = s.hands[roomState.activeHandIndex];
+        if (!h || h.status !== "PLAYING" || h.cards.length !== 2 || h.isSplit) return;
+        const refund = Math.floor((h.wagered || h.bet) * 0.5);
+        s.bankroll += refund;
+        h.status = "SURRENDERED";
+        h.payout = refund;
+        audio.playCash();
+        roomState.ticker = `${s.name} surrendered (+$${refund.toLocaleString()} back).`;
+        advanceTurn();
+        broadcastState();
+        scheduleBotTurn();
       }
 
       function doInsurance(sIdx) {
         const s = roomState.seats[sIdx];
+        if (!s) return;
         const h = s.hands[0];
-        const cost = Math.floor(h.bet / 2);
-        if (s.insuranceBet > 0 || s.bankroll < cost) return;
+        const dealerUp = roomState.dealerHand[0];
+        if (!h || !dealerUp || dealerUp.rank !== "A" || h.cards.length !== 2 || s.hands.length !== 1) return;
+        const cost = Math.floor((h.wagered || h.bet) / 2);
+        if (cost <= 0 || s.insuranceBet > 0 || s.bankroll < cost) return;
         s.bankroll -= cost;
         s.insuranceBet = cost;
         audio.playChip();
-        roomState.ticker = `${s.name} took $${cost} Insurance.`;
+        roomState.ticker = `${s.name} took $${cost.toLocaleString()} Insurance.`;
         broadcastState();
       }
 
       function doEarlyCashOut(sIdx) {
         const s = roomState.seats[sIdx];
+        if (!s) return;
         const h = s.hands[roomState.activeHandIndex];
         if (!h || h.status !== "PLAYING") return;
         const offer = computeEarlyCashOut(h, roomState.dealerHand[0]);
+        if (offer <= 0) return;
         s.bankroll += offer;
         h.status = "CASHED_OUT";
         h.payout = offer;
@@ -2336,31 +2648,43 @@
         scheduleBotTurn();
       }
 
+      function applyLocalOutcomeFeedback(mySeat) {
+        if (!mySeat || !mySeat.hands.length) return;
+        let localWon = false, localBJ = false, localLost = false;
+        mySeat.hands.forEach(h => {
+          profile.stats.handsPlayed++;
+          if (h.status === "BLACKJACK") { profile.stats.wins++; localWon = true; localBJ = true; }
+          else if (h.status === "WIN") { profile.stats.wins++; localWon = true; }
+          else if (h.status === "PUSH" || h.status === "CASHED_OUT") { profile.stats.pushes++; }
+          else if (h.status === "LOSE" || h.status === "BUST" || h.status === "SURRENDERED") { profile.stats.losses++; localLost = true; }
+        });
+        saveProfile();
+        if (localWon) { audio.playWin(localBJ); spawnCelebration(localBJ ? 110 : 60); flashEdge("win"); }
+        else if (localLost) { audio.playBust(); flashEdge("bust"); }
+      }
+
       function resolveDealerAndPayouts() {
         roomState.phase = "PAYOUT";
         roomState.phaseEndsAt = Date.now() + 8500;
         roomState.dealerHand.forEach(c => {
           if (c.hidden) {
             delete c.hidden;
-            const v = cardVal(c.rank);
-            if (v >= 2 && v <= 6) roomState.runningCount++;
-            else if (v === 10 || c.rank === "A") roomState.runningCount--;
+            updateHiLoForCard(roomState, c);
           }
         });
 
         const anyLive = roomState.seats.some(s => s && s.hands.some(h => h.status === "STAND" || h.status === "BLACKJACK"));
-        let dEv = evaluateHand(roomState.dealerHand);
+        let dEv = evaluateHand(roomState.dealerHand, false);
         const dealerBJ = dEv.isBlackjack;
 
         if (anyLive && !dealerBJ) {
           while (dEv.total < 17 || (roomState.hitSoft17 && dEv.total === 17 && dEv.isSoft)) {
-            roomState.dealerHand.push(drawCard(roomState));
-            dEv = evaluateHand(roomState.dealerHand);
+            roomState.dealerHand.push(drawCard(roomState, true));
+            dEv = evaluateHand(roomState.dealerHand, false);
           }
         }
 
         const evId = roomState.activeEvent;
-        let localWon = false, localBJ = false;
 
         roomState.seats.forEach(s => {
           if (!s || !s.hands.length) return;
@@ -2372,49 +2696,48 @@
             : 1;
 
           s.hands.forEach(h => {
-            if (h.status === "CASHED_OUT") return;
-            const pEv = evaluateHand(h.cards);
+            if (h.status === "CASHED_OUT" || h.status === "SURRENDERED") return;
+            const pEv = evaluateHand(h.cards, h.isSplit);
+            const stake = h.wagered != null ? h.wagered : h.bet;
+
             if (evId === "lucky_7s") {
               const sevens = h.cards.filter(c => c.rank === "7").length;
               if (sevens > 0) s.bankroll += sevens * 250;
             }
-            if (s.id === profile.id) profile.stats.handsPlayed++;
 
             const winMult = (evId === "golden_hour" ? 2 : 1) * streakMult;
             const bjMult = (evId === "high_stakes_surge" ? 3 : (roomState.bjPayout || 1.5)) * winMult;
 
             if (h.status === "BUST" || (dealerBJ && h.status !== "BLACKJACK")) {
               h.status = "LOSE"; lostAny = true;
-              if (evId === "high_roller_rebate") { const reb = Math.floor(h.bet * 0.5); s.bankroll += reb; h.payout = reb; }
-              if (s.id === profile.id) profile.stats.losses++;
+              if (evId === "high_roller_rebate") { const reb = Math.floor(stake * 0.5); s.bankroll += reb; h.payout = reb; }
             } else if (h.status === "BLACKJACK" && !dealerBJ) {
-              const total = h.bet + Math.floor(h.bet * bjMult);
+              const total = stake + Math.floor(h.bet * bjMult);
               s.bankroll += total; h.payout = total; wonAny = true;
-              if (s.id === profile.id) { localWon = true; localBJ = true; profile.stats.wins++; }
             } else if (dEv.isBust || pEv.total > dEv.total) {
-              const total = h.bet + Math.floor(h.bet * winMult);
+              const total = stake + Math.floor(h.bet * winMult);
               s.bankroll += total; h.status = "WIN"; h.payout = total; wonAny = true;
-              if (s.id === profile.id) { localWon = true; profile.stats.wins++; }
             } else if (pEv.total === dEv.total) {
-              s.bankroll += h.bet; h.status = "PUSH"; h.payout = h.bet;
-              if (s.id === profile.id) profile.stats.pushes++;
+              // On Free Double Down push, return only actual wagered stake
+              s.bankroll += stake; h.status = "PUSH"; h.payout = stake;
             } else {
               h.status = "LOSE"; lostAny = true;
-              if (evId === "high_roller_rebate") { const reb = Math.floor(h.bet * 0.5); s.bankroll += reb; h.payout = reb; }
-              if (s.id === profile.id) profile.stats.losses++;
+              if (evId === "high_roller_rebate") { const reb = Math.floor(stake * 0.5); s.bankroll += reb; h.payout = reb; }
             }
           });
 
           if (wonAny && !lostAny) s.streak = (s.streak || 0) + 1;
           else if (lostAny) s.streak = 0;
+
+          if (s.id === profile.id) applyLocalOutcomeFeedback(s);
         });
 
-        roomState.ticker = dEv.isBust ? `Dealer BUSTS (${dEv.total})! Winners paid.` : `Dealer stands on ${dEv.total}.`;
-        if (localWon) { audio.playWin(localBJ); spawnCelebration(localBJ ? 110 : 60); flashEdge("win"); }
+        roomState.ticker = dEv.isBust ? `Dealer BUSTS (${dEv.total})! Winners paid.` : (dealerBJ ? "Dealer has NATURAL BLACKJACK!" : `Dealer stands on ${dEv.total}.`);
       }
 
       function resetNewRound() {
         if (!roomState) return;
+        seenCardUids.clear();
         roomState.phase = "BETTING";
         roomState.phaseEndsAt = Date.now() + 20000;
         roomState.dealerHand = [];
@@ -2430,8 +2753,7 @@
           if (s.isBot && s.bankroll < 100) s.bankroll = 2500;
         });
 
-        // Auto-Rebet Previous Wager if enabled in Settings
-        if (profile.settings.autoRebet && lastBetAmount > 0) {
+        if (profile.settings.autoRebet && lastBetAmount >= roomState.minBet) {
           const me = roomState.seats.find(s => s && s.id === profile.id);
           if (me && me.bankroll >= lastBetAmount) {
             me.pendingBet = Math.min(lastBetAmount, roomState.maxBet);
@@ -2454,7 +2776,7 @@
           if (!isHost && !isSoloMode) return;
           if (rem === 0) {
             if (roomState.phase === "BETTING") {
-              if (roomState.seats.some(s => s && (s.pendingBet > 0 || s.isBot))) startDealingRound();
+              if (roomState.seats.some(s => s && ((s.pendingBet >= roomState.minBet) || s.isBot))) startDealingRound();
               else { roomState.phaseEndsAt = Date.now() + 20000; broadcastState(); }
             } else if (roomState.phase === "PLAYER_TURNS") {
               doStand(roomState.activeSeatIndex, true);
@@ -2478,6 +2800,8 @@
       function enterTableUI(code) {
         roomCode = code;
         guardrailDismissed = false;
+        clientPrevPhase = roomState ? roomState.phase : null;
+        seenCardUids.clear();
         document.getElementById("lobby-view").classList.add("hidden");
         document.getElementById("table-view").classList.remove("hidden");
         document.getElementById("hud-room-code").textContent = code;
@@ -2488,7 +2812,7 @@
 
       function startSoloTable() {
         audio.init();
-        isSoloMode = true; isHost = true;
+        isSoloMode = true; isHost = true; peerConnected = false;
         const me = makeSeat(profile.id, profile.name, profile.avatar, profile.tableStack, false);
         const b1 = makeSeat("bot_1", "Duchess Camille", "💎", 3500, true);
         const b2 = makeSeat("bot_2", "Baron Vance", "🎩", 4800, true);
@@ -2506,9 +2830,11 @@
           return;
         }
         const code = genRoomCode();
+        peerConnected = false;
         showSnackbar(`Opening Private Room ${code}...`);
         peer = new Peer(`mcn-bj-room-${code}`);
         peer.on("open", () => {
+          peerConnected = true;
           isSoloMode = false; isHost = true;
           const me = makeSeat(profile.id, profile.name, profile.avatar, profile.tableStack, false);
           roomState = createRoomState(code, selectedLobbyMode, me);
@@ -2519,13 +2845,13 @@
           conn.on("data", msg => {
             if (!msg || !roomState) return;
             if (msg.type === "JOIN") {
-              const p = msg.player;
+              const p = msg.player || {};
               let idx = roomState.seats.findIndex(s => s && s.id === p.id);
               if (idx === -1) idx = roomState.seats.findIndex(s => s === null);
               if (idx === -1) { conn.send({ type: "ERROR", message: "Table is full (4/4)." }); return; }
               roomState.seats[idx] = makeSeat(p.id, p.name, p.avatar, p.bankroll, false);
               clientConns.set(p.id, conn);
-              roomState.ticker = `${p.name} joined Seat ${idx + 1}!`;
+              roomState.ticker = `${roomState.seats[idx].name} joined Seat ${idx + 1}!`;
               broadcastState();
             } else if (msg.type === "ACTION") {
               handleAuthoritativeAction(msg.playerId, msg.action);
@@ -2536,14 +2862,20 @@
               if (c === conn) {
                 clientConns.delete(pid);
                 const idx = roomState?.seats.findIndex(s => s && s.id === pid);
-                if (idx !== -1) { roomState.seats[idx] = null; broadcastState(); }
+                if (idx !== -1) removeSeatSafely(idx);
               }
             }
           });
         });
         peer.on("error", () => {
-          showSnackbar("Could not connect to PeerJS cloud — launching Solo Table.", "error");
-          startSoloTable();
+          if (!peerConnected) {
+            try { peer.destroy(); } catch (e) {}
+            peer = null;
+            showSnackbar("Could not connect to PeerJS cloud — launching Solo Table.", "error");
+            startSoloTable();
+          } else {
+            showSnackbar("Temporary signaling hiccup — room remains active.", "error");
+          }
         });
       }
 
@@ -2565,10 +2897,33 @@
             if (msg.type === "ERROR") { showSnackbar(msg.message, "error"); leaveTable(); }
             else if (msg.type === "STATE") {
               const first = !roomState;
+              const prevPhase = clientPrevPhase;
               roomState = msg.state;
+              clientPrevPhase = roomState.phase;
+
               const me = roomState.seats.find(s => s && s.id === profile.id);
-              if (me) { profile.tableStack = me.bankroll; saveProfile(); }
-              if (first) enterTableUI(code); else renderTable();
+              if (me) {
+                profile.tableStack = me.bankroll;
+                profile.streak = me.streak || 0;
+                if (me.pendingBet > 0) lastBetAmount = me.pendingBet;
+                saveProfile();
+              }
+
+              if (first) {
+                enterTableUI(code);
+              } else {
+                // Client-side round transition hooks (stats, SFX, confetti, auto-rebet)
+                if (prevPhase !== "PAYOUT" && roomState.phase === "PAYOUT" && me) {
+                  applyLocalOutcomeFeedback(me);
+                }
+                if (prevPhase !== "BETTING" && roomState.phase === "BETTING") {
+                  seenCardUids.clear();
+                  if (profile.settings.autoRebet && lastBetAmount >= roomState.minBet && me && me.bankroll >= lastBetAmount) {
+                    sendAction({ kind: "REBET", amount: lastBetAmount });
+                  }
+                }
+                renderTable();
+              }
             }
           });
           conn.on("close", () => { showSnackbar("Host ended the room.", "error"); leaveTable(); });
@@ -2582,7 +2937,8 @@
         clientConns.forEach(c => { try { c.close(); } catch (e) {} });
         clientConns.clear();
         if (peer) { try { peer.destroy(); } catch (e) {} peer = null; }
-        roomState = null; roomCode = null; isHost = false; isSoloMode = false;
+        roomState = null; roomCode = null; isHost = false; isSoloMode = false; peerConnected = false; clientPrevPhase = null;
+        seenCardUids.clear();
         document.getElementById("table-view").classList.add("hidden");
         document.getElementById("lobby-view").classList.remove("hidden");
         updateProfileUI();
@@ -2593,13 +2949,14 @@
        * --------------------------------------------------------------------- */
       function getCardBackSVG(styleId) {
         if (styleId === "crimson") {
+          const patId = `cbCrim_${svgPatSeq++}`;
           return `
             <svg viewBox="0 0 70 100" class="w-full h-full rounded-[7px]">
-              <defs><pattern id="cbCrim" width="10" height="10" patternUnits="userSpaceOnUse">
+              <defs><pattern id="${patId}" width="10" height="10" patternUnits="userSpaceOnUse">
                 <path d="M5 0 L10 5 L5 10 L0 5 Z" fill="none" stroke="#F5C648" stroke-width="0.8" stroke-opacity="0.72" />
               </pattern></defs>
               <rect width="70" height="100" rx="5" fill="#7F0E24" />
-              <rect x="4" y="4" width="62" height="92" rx="4" fill="url(#cbCrim)" stroke="#F5C648" stroke-width="1.4" />
+              <rect x="4" y="4" width="62" height="92" rx="4" fill="url(#${patId})" stroke="#F5C648" stroke-width="1.4" />
               <circle cx="35" cy="50" r="12" fill="#4A0715" stroke="#F5C648" stroke-width="1.3" />
               <text x="35" y="54" text-anchor="middle" fill="#FDE68A" font-family="Playfair Display, serif" font-size="10" font-weight="900">MC</text>
             </svg>`;
@@ -2624,7 +2981,6 @@
               <text x="35" y="54" text-anchor="middle" fill="#FDE68A" font-family="Playfair Display, serif" font-size="11" font-weight="900">♛</text>
             </svg>`;
         }
-        // Default: obsidian
         return `
           <svg viewBox="0 0 70 100" class="w-full h-full rounded-[7px]">
             <rect width="70" height="100" rx="5" fill="#0A0F0D" />
@@ -2637,18 +2993,26 @@
 
       function renderCardHTML(card, idx = 0, haloCls = "") {
         const flipped = card.hidden ? "is-flipped" : "";
+        const isNew = card.uid != null && !seenCardUids.has(card.uid);
+        if (card.uid != null) seenCardUids.add(card.uid);
+        const animCls = isNew ? "deal-anim" : "";
+        const rank = card.hidden ? "" : escapeHTML(card.rank);
+        const suit = card.hidden ? "" : escapeHTML(card.suit);
+        const colorCls = card.hidden ? "text-[#111318]" : (card.color || "text-[#111318]");
+        const isCourt = ["A", "K", "Q", "J"].includes(card.rank);
+
         return `
           <div class="card-scene ${haloCls}" style="z-index:${idx + 1};">
-            <div class="card-inner ${flipped}" style="animation-delay:${idx * 75}ms;">
-              <div class="card-face card-front ${card.color}">
+            <div class="card-inner ${flipped} ${animCls}" style="animation-delay:${isNew ? idx * 65 : 0}ms;">
+              <div class="card-face card-front ${colorCls}">
                 <div class="flex flex-col items-start leading-none">
-                  <span class="font-serif font-black text-sm md:text-base">${card.rank}</span>
-                  <span class="text-xs md:text-sm">${card.suit}</span>
+                  <span class="font-serif font-black text-sm md:text-base">${rank}</span>
+                  <span class="text-xs md:text-sm">${suit}</span>
                 </div>
-                <div class="self-center text-2xl md:text-3xl">${card.suit}</div>
+                <div class="self-center ${isCourt ? "text-2xl md:text-3xl drop-shadow-sm" : "text-2xl md:text-3xl"}">${suit}</div>
                 <div class="flex flex-col items-end leading-none rotate-180">
-                  <span class="font-serif font-black text-sm md:text-base">${card.rank}</span>
-                  <span class="text-xs md:text-sm">${card.suit}</span>
+                  <span class="font-serif font-black text-sm md:text-base">${rank}</span>
+                  <span class="text-xs md:text-sm">${suit}</span>
                 </div>
               </div>
               <div class="card-face card-back">${getCardBackSVG(profile.settings.cardBack)}</div>
@@ -2678,7 +3042,10 @@
       function renderTable() {
         if (!roomState) return;
         const modeObj = GAMEMODES[roomState.mode] || GAMEMODES.classic;
+        const baseEdge = computeHouseEdge(roomState.decks, roomState.bjPayout, roomState.hitSoft17);
         document.getElementById("hud-mode-name").textContent = modeObj.name;
+        document.getElementById("hud-rules-pill").textContent =
+          `${roomState.decks}D • ${roomState.bjPayout === 1.2 ? "6:5" : "3:2"} • ${roomState.hitSoft17 ? "H17" : "S17"} • ${baseEdge.toFixed(2)}% Edge`;
 
         if (roomState.activeEvent && roomState.eventTs && roomState.eventTs !== lastShownEventTs) {
           lastShownEventTs = roomState.eventTs;
@@ -2695,14 +3062,15 @@
 
         document.getElementById("svg-payout-text").textContent =
           roomState.activeEvent === "high_stakes_surge" ? "BLACKJACK PAYS 3 TO 1" : (roomState.bjPayout === 1.2 ? "BLACKJACK PAYS 6 TO 5" : "BLACKJACK PAYS 3 TO 2");
-        document.getElementById("svg-dealer-rule-text").textContent = roomState.hitSoft17 ? "DEALER HITS SOFT 17" : "DEALER STANDS ON ALL 17s";
+        document.getElementById("svg-dealer-rule-text").textContent =
+          roomState.hitSoft17 ? "DEALER HITS SOFT 17 • LATE SURRENDER" : "DEALER STANDS ON ALL 17s • LATE SURRENDER";
 
         const totalCards = (roomState.decks || 6) * 52;
-        const shoeLen = roomState.shoe ? roomState.shoe.length : totalCards;
+        const shoeLen = roomState.shoe && roomState.shoe.length ? roomState.shoe.length : (roomState.shoeCount ?? totalCards);
         const discLen = roomState.discardCount || 0;
         document.getElementById("shoe-deck-title").textContent = `${roomState.decks || 6}-Deck Shoe`;
         document.getElementById("shoe-count-label").textContent = `${shoeLen} / ${totalCards}`;
-        document.getElementById("shoe-fill-bar").style.height = `${Math.max(4, Math.round((shoeLen / totalCards) * 100))}%`;
+        document.getElementById("shoe-fill-bar").style.height = `${Math.min(100, Math.max(4, Math.round((shoeLen / totalCards) * 100)))}%`;
         document.getElementById("discard-count-label").textContent = `${discLen} Cards`;
         document.getElementById("discard-fill-bar").style.height = `${Math.min(100, Math.max(6, Math.round((discLen / totalCards) * 100)))}%`;
         document.getElementById("dealer-ticker-text").textContent = roomState.ticker || "";
@@ -2727,7 +3095,7 @@
         const dArea = document.getElementById("dealer-cards-area");
         const dBadge = document.getElementById("dealer-score-badge");
         if (roomState.dealerHand.length) {
-          const dEv = evaluateHand(roomState.dealerHand);
+          const dEv = evaluateHand(roomState.dealerHand, false);
           dArea.innerHTML = roomState.dealerHand.map((c, i) => renderCardHTML(c, i, dEv.isBust ? "card-bust-halo" : "")).join("");
           dBadge.textContent = dEv.label; dBadge.classList.remove("hidden");
         } else {
@@ -2740,7 +3108,7 @@
         grid.innerHTML = roomState.seats.map((seat, idx) => {
           if (!seat) {
             return `
-              <div class="rounded-3xl border border-dashed border-white/15 bg-black/20 p-4 flex flex-col items-center justify-center min-h-[200px] text-center">
+              <div class="rounded-3xl border border-dashed border-white/15 bg-black/20 p-4 flex flex-col items-center justify-center min-h-[208px] text-center">
                 <div class="betting-circle opacity-40 mb-2"><span class="font-serif font-bold theme-accent-soft">${idx + 1}</span></div>
                 <div class="text-xs font-semibold text-slate-300">Open Seat</div>
                 <div class="text-[11px] text-slate-500">Share Room Code</div>
@@ -2756,19 +3124,20 @@
           let body = "";
           if (seat.hands.length) {
             body = seat.hands.map((h, hIdx) => {
-              const ev = evaluateHand(h.cards);
+              const ev = evaluateHand(h.cards, h.isSplit);
               const halo = (h.status === "WIN" || h.status === "BLACKJACK") ? "card-win-halo"
                 : (h.status === "LOSE" || h.status === "BUST") ? "card-bust-halo" : "";
               let pill = "";
-              if (h.status === "BLACKJACK") pill = `<span class="px-2 py-0.5 rounded-full bg-amber-400 text-black font-extrabold text-[10px]">BJ +$${h.payout}</span>`;
-              else if (h.status === "WIN") pill = `<span class="px-2 py-0.5 rounded-full bg-emerald-400 text-black font-extrabold text-[10px]">WIN +$${h.payout}</span>`;
-              else if (h.status === "CASHED_OUT") pill = `<span class="px-2 py-0.5 rounded-full bg-teal-400 text-black font-extrabold text-[10px]">CASHED $${h.payout}</span>`;
+              if (h.status === "BLACKJACK") pill = `<span class="px-2 py-0.5 rounded-full bg-amber-400 text-black font-extrabold text-[10px]">BJ +$${h.payout.toLocaleString()}</span>`;
+              else if (h.status === "WIN") pill = `<span class="px-2 py-0.5 rounded-full bg-emerald-400 text-black font-extrabold text-[10px]">WIN +$${h.payout.toLocaleString()}</span>`;
+              else if (h.status === "CASHED_OUT") pill = `<span class="px-2 py-0.5 rounded-full bg-teal-400 text-black font-extrabold text-[10px]">CASHED $${h.payout.toLocaleString()}</span>`;
+              else if (h.status === "SURRENDERED") pill = `<span class="px-2 py-0.5 rounded-full bg-slate-300 text-black font-extrabold text-[10px]">SURR $${h.payout.toLocaleString()}</span>`;
               else if (h.status === "PUSH") pill = `<span class="px-2 py-0.5 rounded-full bg-slate-200 text-black font-extrabold text-[10px]">PUSH</span>`;
               else if (h.status === "LOSE" || h.status === "BUST") pill = `<span class="px-2 py-0.5 rounded-full bg-rose-600 text-white font-extrabold text-[10px]">${h.status}</span>`;
 
               let bustBadge = "";
               if (profile.settings.showBustRisk && isTurn && hIdx === roomState.activeHandIndex && h.status === "PLAYING") {
-                const risk = computeBustRiskPercent(h.cards, roomState.shoe);
+                const risk = computeBustRiskPercent(h.cards);
                 const rCol = risk >= 55 ? "text-rose-300 border-rose-400/40" : risk >= 30 ? "text-amber-300 border-amber-400/40" : "text-emerald-300 border-emerald-400/40";
                 bustBadge = `<span class="font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-black/75 border ${rCol}">Bust ${risk}%</span>`;
               }
@@ -2789,20 +3158,20 @@
           } else {
             body = `
               <div class="my-2 min-h-[82px] flex flex-col items-center justify-center">
-                ${seat.pendingBet > 0 ? renderChipStackHTML(seat.pendingBet) : `<div class="betting-circle"><span class="text-[9px] font-mono font-bold theme-accent-soft">BET</span></div>`}
+                ${seat.pendingBet > 0 ? renderChipStackHTML(seat.pendingBet) : `<div class="betting-circle"><span class="text-[9px] font-mono font-bold theme-accent-soft">MIN $${roomState.minBet}</span></div>`}
               </div>`;
           }
 
           const emoteHTML = seat.emote && (Date.now() - seat.emote.ts < 2300)
-            ? `<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-3xl animate-emote pointer-events-none z-30">${seat.emote.symbol}</div>` : "";
+            ? `<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-3xl animate-emote pointer-events-none z-30">${escapeHTML(seat.emote.symbol)}</div>` : "";
 
           return `
-            <div class="relative rounded-3xl border-2 ${seatCls} backdrop-blur-md p-3 transition-all flex flex-col justify-between min-h-[208px]">
+            <div class="relative rounded-3xl border-2 ${seatCls} backdrop-blur-md p-3 transition-all flex flex-col justify-between min-h-[212px]">
               ${emoteHTML}
               <div class="flex items-center justify-between gap-1.5 border-b border-white/10 pb-1.5">
                 <div class="flex items-center gap-1.5 min-w-0">
-                  <span class="text-base">${seat.avatar}</span>
-                  <span class="font-bold text-xs sm:text-sm truncate ${isMe ? "theme-accent-text" : "text-white"}">${seat.name}</span>
+                  <span class="text-base">${escapeHTML(seat.avatar)}</span>
+                  <span class="font-bold text-xs sm:text-sm truncate ${isMe ? "theme-accent-text" : "text-white"}">${escapeHTML(seat.name)}</span>
                 </div>
                 <span class="font-mono text-xs font-extrabold text-emerald-300 shrink-0">$${Math.floor(seat.bankroll).toLocaleString()}</span>
               </div>
@@ -2831,27 +3200,43 @@
 
         if (roomState.phase === "BETTING" && me && !roomState.paused) {
           betBox.classList.remove("hidden");
+          const dealBtn = document.getElementById("btn-deal-now");
+          const dealLbl = document.getElementById("btn-deal-label");
+          if (isHost || isSoloMode) {
+            dealBtn.disabled = false;
+            dealLbl.textContent = "Deal";
+          } else {
+            dealBtn.disabled = true;
+            dealLbl.textContent = me.pendingBet >= roomState.minBet ? "Waiting for Host" : `Min $${roomState.minBet}`;
+          }
+          // Disable chips exceeding remaining stack
+          const avail = Math.max(0, me.bankroll - me.pendingBet);
+          document.querySelectorAll(".chip-btn").forEach(btn => {
+            btn.disabled = Number(btn.dataset.chip) > avail;
+          });
         } else if (roomState.phase === "PLAYER_TURNS" && me && roomState.activeSeatIndex === myIdx && !roomState.paused) {
           turnBox.classList.remove("hidden");
           const h = me.hands[roomState.activeHandIndex];
           const isFreeDbl = roomState.activeEvent === "free_double";
           const canDouble = h && h.cards.length === 2 && (isFreeDbl || me.bankroll >= h.bet);
           const canSplit = h && me.hands.length === 1 && h.cards.length === 2 && cardVal(h.cards[0].rank) === cardVal(h.cards[1].rank) && me.bankroll >= h.bet;
+          const canSurrender = h && h.cards.length === 2 && !h.isSplit;
 
           document.getElementById("btn-double").disabled = !canDouble;
           document.getElementById("btn-double-label").textContent = isFreeDbl ? "Free Double" : "Double";
           document.getElementById("btn-split").disabled = !canSplit;
+          document.getElementById("btn-surrender").disabled = !canSurrender;
 
           const dealerUp = roomState.dealerHand[0];
           const offer = computeEarlyCashOut(h, dealerUp);
           document.getElementById("btn-early-cashout-label").textContent = `Cash Out $${offer.toLocaleString()}`;
 
           const insBtn = document.getElementById("btn-insurance");
-          if (dealerUp && dealerUp.rank === "A" && h.cards.length === 2 && me.insuranceBet === 0 && me.bankroll >= Math.floor(h.bet / 2)) {
+          if (dealerUp && dealerUp.rank === "A" && h.cards.length === 2 && me.hands.length === 1 && me.insuranceBet === 0 && me.bankroll >= Math.floor((h.wagered || h.bet) / 2)) {
             insBtn.classList.remove("hidden");
           } else insBtn.classList.add("hidden");
 
-          document.getElementById("strategy-advice-badge").textContent = getBasicStrategy(h.cards, dealerUp, canSplit, canDouble);
+          document.getElementById("strategy-advice-badge").textContent = getBasicStrategy(h.cards, dealerUp, canSplit, canDouble, canSurrender);
         } else {
           waitBox.classList.remove("hidden");
           if (roomState.phase === "PAYOUT") {
@@ -2865,23 +3250,42 @@
         }
 
         const rc = roomState.runningCount || 0;
-        const decksRem = Math.max(0.5, (roomState.shoe ? roomState.shoe.length : 312) / 52);
+        const shoeLen = roomState.shoe && roomState.shoe.length ? roomState.shoe.length : (roomState.shoeCount ?? (roomState.decks * 52));
+        const decksRem = Math.max(0.5, shoeLen / 52);
+        const tc = rc / decksRem;
+        const baseEdge = computeHouseEdge(roomState.decks, roomState.bjPayout, roomState.hitSoft17);
+        const playerEdge = (tc * 0.5) - baseEdge;
+
+        document.getElementById("hud-house-edge").textContent = `${baseEdge.toFixed(2)}%`;
+        const peEl = document.getElementById("hud-player-edge");
+        peEl.textContent = `${playerEdge >= 0 ? "+" : ""}${playerEdge.toFixed(2)}%`;
+        peEl.className = `font-mono font-extrabold text-sm ${playerEdge > 0 ? "text-emerald-400" : "text-slate-200"}`;
+
         document.getElementById("hud-running-count").textContent = rc > 0 ? `+${rc}` : `${rc}`;
-        document.getElementById("hud-true-count").textContent = (rc / decksRem).toFixed(1);
+        document.getElementById("hud-true-count").textContent = tc.toFixed(1);
         document.getElementById("stat-wins").textContent = profile.stats.wins;
         document.getElementById("stat-pushes").textContent = profile.stats.pushes;
         document.getElementById("stat-losses").textContent = profile.stats.losses;
       }
 
       /* -----------------------------------------------------------------------
-       * 9. SETTINGS HUB MODAL RENDERING & LIVE BINDINGS
+       * 9. ODDS MODAL & SETTINGS HUB MODAL
        * --------------------------------------------------------------------- */
+      function openOddsModal() {
+        const m = roomState || GAMEMODES[selectedLobbyMode] || GAMEMODES.classic;
+        const edge = computeHouseEdge(m.decks, m.bjPayout, m.hitSoft17);
+        document.getElementById("odds-modal-edge-val").textContent = `${edge.toFixed(2)}%`;
+        document.getElementById("odds-modal-rules-summary").textContent =
+          `${m.decks} Decks • ${m.bjPayout === 1.2 ? "6:5" : "3:2"} Blackjack • ${m.hitSoft17 ? "H17" : "S17"} • DAS • Late Surrender`;
+        document.getElementById("odds-bj-pay").textContent = m.bjPayout === 1.2 ? "6 to 5 (1.2×)" : "3 to 2 (1.5×)";
+        document.getElementById("odds-modal").classList.remove("hidden");
+      }
+
       let resetStatsArmed = false;
 
       function openSettingsModal(initialTab = "visuals") {
         const s = profile.settings;
 
-        // Render 7 Theme Swatches
         const thGrid = document.getElementById("theme-swatch-grid");
         thGrid.innerHTML = THEMES.map(t => {
           const active = t.id === s.theme;
@@ -2905,7 +3309,6 @@
           });
         });
 
-        // Render 4 Card Backs
         const cbGrid = document.getElementById("cardback-grid");
         cbGrid.innerHTML = CARD_BACKS.map(cb => {
           const active = cb.id === s.cardBack;
@@ -2926,14 +3329,12 @@
           });
         });
 
-        // Visual Toggles
         document.getElementById("set-particles").value = s.particles;
         document.getElementById("set-spotlight").checked = s.spotlight;
         document.getElementById("set-inscriptions").checked = s.inscriptions;
         document.getElementById("set-card3d").checked = s.card3d;
         document.getElementById("set-reduced-motion").checked = s.reducedMotion;
 
-        // Gameplay Toggles
         document.getElementById("set-anim-speed").value = s.animSpeed;
         document.getElementById("set-auto-rebet").checked = s.autoRebet;
         document.getElementById("set-kbd-shortcuts").checked = s.keyboardShortcuts;
@@ -2944,7 +3345,6 @@
         document.getElementById("set-stop-loss").value = s.stopLoss;
         document.getElementById("set-win-goal").value = s.winGoal;
 
-        // Audio Track Grid
         const trGrid = document.getElementById("settings-track-grid");
         trGrid.innerHTML = audio.tracks.map(tr => {
           const active = tr.id === s.musicTrack;
@@ -2968,7 +3368,6 @@
         document.getElementById("set-sfx-vol-label").textContent = `${Math.round(s.sfxVol * 100)}%`;
         document.getElementById("set-fanfare").checked = s.fanfare;
 
-        // Profile & Privacy
         document.getElementById("set-player-name").value = profile.name;
         document.getElementById("set-streamer-mode").checked = s.streamerMode;
         const avGrid = document.getElementById("settings-avatar-grid");
@@ -3006,7 +3405,15 @@
        * --------------------------------------------------------------------- */
       let lastVoucher = null;
 
+      function getMySeat() {
+        return roomState ? roomState.seats.find(s => s && s.id === profile.id) : null;
+      }
+
       function openCashierModal() {
+        const me = getMySeat();
+        const hasPendingBet = !!(me && me.pendingBet > 0);
+        document.getElementById("cage-bet-warning").classList.toggle("hidden", !hasPendingBet);
+
         const stack = Math.floor(profile.tableStack);
         document.getElementById("cage-stack-val").textContent = `$${stack.toLocaleString()}`;
         document.getElementById("cage-vault-val").textContent = `$${Math.floor(profile.safeVault).toLocaleString()}`;
@@ -3018,15 +3425,20 @@
       }
 
       function executeCashOut(amount, shouldLeave) {
+        const me = getMySeat();
+        if (me && me.pendingBet > 0 && !shouldLeave) {
+          showSnackbar("Clear your pending table bet before cashing out.", "error");
+          return;
+        }
         const amt = Math.min(Math.floor(amount), Math.floor(profile.tableStack));
         if (amt <= 0) { showSnackbar("Select a Cash Out amount above $0.", "error"); return; }
         profile.tableStack -= amt;
         profile.safeVault += amt;
         saveProfile();
-        if (roomState) sendAction({ kind: "BANK_SYNC", newStack: profile.tableStack });
+        if (roomState && !shouldLeave) sendAction({ kind: "BANK_SYNC", newStack: profile.tableStack });
         audio.playCash(); spawnCelebration(50);
 
-        const netPnl = (profile.tableStack + profile.safeVault) - (profile.sessionBuyIn + 1000);
+        const netPnl = getSessionNetPnL();
         lastVoucher = {
           id: "MCN-" + Math.random().toString(36).substring(2, 8).toUpperCase(),
           player: profile.name, amount: amt, pnl: netPnl,
@@ -3090,7 +3502,9 @@
         const cipher = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, enc.encode(JSON.stringify({ ...profile, savedAt: Date.now() })));
         const out = new Uint8Array(28 + cipher.byteLength);
         out.set(salt, 0); out.set(iv, 16); out.set(new Uint8Array(cipher), 28);
-        return btoa(String.fromCharCode(...out));
+        let bin = "";
+        for (let i = 0; i < out.length; i++) bin += String.fromCharCode(out[i]);
+        return btoa(bin);
       }
       async function decryptProfile(code, pass) {
         const raw = Uint8Array.from(atob(code.trim()), c => c.charCodeAt(0));
@@ -3121,7 +3535,7 @@
           if (!s) return `<div class="p-2.5 rounded-xl bg-white/5 text-slate-400">Seat ${idx + 1}: Empty</div>`;
           return `
             <div class="p-2.5 rounded-xl bg-black/45 border border-white/10 flex items-center justify-between gap-2">
-              <div class="flex items-center gap-2"><span>${s.avatar}</span><span class="font-bold text-white">${s.name}</span><span class="font-mono text-emerald-300">$${Math.floor(s.bankroll).toLocaleString()}</span></div>
+              <div class="flex items-center gap-2"><span>${escapeHTML(s.avatar)}</span><span class="font-bold text-white">${escapeHTML(s.name)}</span><span class="font-mono text-emerald-300">$${Math.floor(s.bankroll).toLocaleString()}</span></div>
               <div class="flex gap-1.5">
                 <button data-gift-seat="${idx}" class="px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-200 font-bold">+$500</button>
                 ${s.id !== profile.id ? `<button data-kick-seat="${idx}" class="px-2.5 py-1 rounded-full bg-rose-600 text-white font-bold">Kick</button>` : ""}
@@ -3137,15 +3551,16 @@
           const t = roomState.seats[idx];
           if (t) {
             const c = clientConns.get(t.id); if (c) { try { c.close(); } catch (e) {} clientConns.delete(t.id); }
-            roomState.seats[idx] = null; broadcastState(); populateAdminModal();
+            removeSeatSafely(idx);
+            populateAdminModal();
           }
         }));
 
         const evGrid = document.getElementById("admin-events-grid");
         evGrid.innerHTML = Object.values(RANDOM_EVENTS).map(ev => `
           <button data-fire-ev="${ev.id}" class="p-3 rounded-2xl bg-gradient-to-r ${ev.color} text-left shadow hover:brightness-110">
-            <div class="font-serif font-extrabold text-xs flex items-center gap-1.5"><span class="material-symbols-rounded text-base">${ev.icon}</span><span>${ev.name}</span></div>
-            <div class="text-[10px] opacity-90 mt-0.5">${ev.desc}</div>
+            <div class="font-serif font-extrabold text-xs flex items-center gap-1.5"><span class="material-symbols-rounded text-base">${ev.icon}</span><span>${escapeHTML(ev.name)}</span></div>
+            <div class="text-[10px] opacity-90 mt-0.5">${escapeHTML(ev.desc)}</div>
           </button>`).join("");
         evGrid.querySelectorAll("[data-fire-ev]").forEach(b => b.addEventListener("click", () => {
           triggerRandomEvent(roomState, b.dataset.fireEv);
@@ -3166,17 +3581,20 @@
        * 12. KEYBOARD SHORTCUTS & INITIALIZATION
        * --------------------------------------------------------------------- */
       window.addEventListener("keydown", (e) => {
-        if (!profile.settings.keyboardShortcuts || !roomState) return;
+        if (!profile.settings.keyboardShortcuts || !roomState || roomState.paused) return;
         if (["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement.tagName)) return;
         const k = e.key.toLowerCase();
-        if (k === " " && roomState.phase === "BETTING") { e.preventDefault(); sendAction({ kind: "DEAL" }); }
-        else if (roomState.phase === "PLAYER_TURNS") {
+        if (k === " " && roomState.phase === "BETTING" && (isHost || isSoloMode)) {
+          e.preventDefault();
+          sendAction({ kind: "DEAL" });
+        } else if (roomState.phase === "PLAYER_TURNS") {
           const myIdx = roomState.seats.findIndex(s => s && s.id === profile.id);
           if (myIdx !== roomState.activeSeatIndex) return;
           if (k === "h") sendAction({ kind: "HIT" });
           else if (k === "s") sendAction({ kind: "STAND" });
           else if (k === "d" && !document.getElementById("btn-double").disabled) sendAction({ kind: "DOUBLE" });
           else if (k === "p" && !document.getElementById("btn-split").disabled) sendAction({ kind: "SPLIT" });
+          else if (k === "r" && !document.getElementById("btn-surrender").disabled) sendAction({ kind: "SURRENDER" });
         }
       });
 
@@ -3190,13 +3608,14 @@
         function renderGamemodes() {
           gmGrid.innerHTML = Object.values(GAMEMODES).map(m => {
             const act = m.id === selectedLobbyMode;
+            const edge = computeHouseEdge(m.decks, m.bjPayout, m.hitSoft17);
             return `
               <button data-mode="${m.id}" class="text-left p-4 rounded-2xl border transition-all ${
                 act ? "border-[var(--accent)] bg-white/10 shadow-[0_0_20px_var(--card-glow)]" : "border-white/10 bg-black/35 hover:border-white/25"
               }">
                 <div class="flex items-center justify-between mb-1">
                   <span class="px-2 py-0.5 rounded-full text-[9px] font-mono font-extrabold bg-white/10 theme-accent-text">${m.tag}</span>
-                  ${act ? `<span class="material-symbols-rounded text-base theme-accent-text">check_circle</span>` : ""}
+                  <span class="text-[10px] font-mono text-emerald-300">${edge.toFixed(2)}% edge</span>
                 </div>
                 <div class="font-serif font-extrabold text-base text-white">${m.name}</div>
                 <p class="text-[11px] text-slate-300 mt-1 leading-snug">${m.desc}</p>
@@ -3206,7 +3625,9 @@
             btn.addEventListener("click", () => {
               selectedLobbyMode = btn.dataset.mode;
               const m = GAMEMODES[selectedLobbyMode];
-              document.getElementById("selected-mode-summary").textContent = `${m.name} • ${m.decks} Decks • $${m.minBet}–$${m.maxBet.toLocaleString()}`;
+              const edge = computeHouseEdge(m.decks, m.bjPayout, m.hitSoft17);
+              document.getElementById("selected-mode-summary").textContent =
+                `${m.name} • ${m.decks} Decks • $${m.minBet}–$${m.maxBet.toLocaleString()} • House Edge ~${edge.toFixed(2)}%`;
               renderGamemodes();
             });
           });
@@ -3234,6 +3655,10 @@
           });
         });
 
+        document.getElementById("btn-lobby-odds").addEventListener("click", openOddsModal);
+        document.getElementById("btn-table-odds").addEventListener("click", openOddsModal);
+        document.getElementById("btn-close-odds").addEventListener("click", () => document.getElementById("odds-modal").classList.add("hidden"));
+
         document.getElementById("btn-lobby-theme-quick").addEventListener("click", () => openSettingsModal("visuals"));
         document.getElementById("btn-lobby-music-quick").addEventListener("click", () => audio.cycleTrack());
         document.getElementById("btn-lobby-settings").addEventListener("click", () => openSettingsModal("visuals"));
@@ -3255,7 +3680,7 @@
           document.getElementById("guardrail-banner").classList.add("hidden");
         });
 
-        document.getElementById("btn-copy-code").addEventListener("click", () => copyTextSafe(roomCode || "SOLO", `Room Code`));
+        document.getElementById("btn-copy-code").addEventListener("click", () => copyTextSafe(roomCode || "SOLO", "Room Code"));
         document.getElementById("btn-copy-link").addEventListener("click", () => {
           const u = new URL(window.location.href);
           if (roomCode && roomCode !== "SOLO") u.searchParams.set("room", roomCode);
@@ -3263,13 +3688,31 @@
         });
 
         document.querySelectorAll(".chip-btn").forEach(b => b.addEventListener("click", () => sendAction({ kind: "BET", amount: Number(b.dataset.chip) })));
+        document.getElementById("btn-bet-min").addEventListener("click", () => {
+          if (roomState) sendAction({ kind: "SET_BET", amount: roomState.minBet });
+        });
+        document.getElementById("btn-bet-2x").addEventListener("click", () => {
+          const me = getMySeat();
+          if (roomState && me) {
+            const target = me.pendingBet > 0 ? me.pendingBet * 2 : roomState.minBet * 2;
+            sendAction({ kind: "SET_BET", amount: target });
+          }
+        });
+        document.getElementById("btn-bet-max").addEventListener("click", () => {
+          const me = getMySeat();
+          if (roomState && me) {
+            const effMax = roomState.activeEvent === "high_stakes_surge" ? roomState.maxBet * 2 : roomState.maxBet;
+            sendAction({ kind: "SET_BET", amount: Math.min(me.bankroll, effMax) });
+          }
+        });
         document.getElementById("btn-clear-bet").addEventListener("click", () => sendAction({ kind: "CLEAR_BET" }));
-        document.getElementById("btn-rebet").addEventListener("click", () => sendAction({ kind: "REBET", amount: lastBetAmount || 100 }));
+        document.getElementById("btn-rebet").addEventListener("click", () => sendAction({ kind: "REBET", amount: Math.max(roomState ? roomState.minBet : 5, lastBetAmount || 100) }));
         document.getElementById("btn-deal-now").addEventListener("click", () => sendAction({ kind: "DEAL" }));
         document.getElementById("btn-hit").addEventListener("click", () => sendAction({ kind: "HIT" }));
         document.getElementById("btn-stand").addEventListener("click", () => sendAction({ kind: "STAND" }));
         document.getElementById("btn-double").addEventListener("click", () => sendAction({ kind: "DOUBLE" }));
         document.getElementById("btn-split").addEventListener("click", () => sendAction({ kind: "SPLIT" }));
+        document.getElementById("btn-surrender").addEventListener("click", () => sendAction({ kind: "SURRENDER" }));
         document.getElementById("btn-insurance").addEventListener("click", () => sendAction({ kind: "INSURANCE" }));
         document.getElementById("btn-early-cashout").addEventListener("click", () => sendAction({ kind: "EARLY_CASHOUT" }));
         document.getElementById("btn-next-round").addEventListener("click", resetNewRound);
@@ -3328,7 +3771,7 @@
         document.getElementById("set-fanfare").addEventListener("change", e => { profile.settings.fanfare = e.target.checked; saveProfile(); });
 
         document.getElementById("set-player-name").addEventListener("change", e => {
-          profile.name = e.target.value.trim() || "Royal Guest";
+          profile.name = e.target.value.trim().slice(0, 16) || "Royal Guest";
           saveProfile();
           if (roomState) sendAction({ kind: "PROFILE_SYNC", name: profile.name, avatar: profile.avatar });
         });
@@ -3341,7 +3784,7 @@
           document.getElementById("e2e-modal").classList.remove("hidden");
         });
 
-        // Two-step safe reset confirmation (no window.confirm)
+        // Two-step safe reset confirmation
         document.getElementById("btn-reset-stats").addEventListener("click", () => {
           const lbl = document.getElementById("btn-reset-stats-label");
           if (!resetStatsArmed) {
@@ -3352,7 +3795,7 @@
             resetStatsArmed = false;
             lbl.textContent = "Reset Local Session Stats";
             profile.stats = { wins: 0, pushes: 0, losses: 0, handsPlayed: 0 };
-            profile.sessionBuyIn = profile.tableStack;
+            profile.sessionStartTotal = profile.tableStack + profile.safeVault;
             saveProfile();
             if (roomState) updateControlsAndHUD();
             showSnackbar("Local session stats reset!");
@@ -3365,21 +3808,24 @@
         cSl.addEventListener("input", () => { document.getElementById("cage-slider-label").textContent = `$${Number(cSl.value).toLocaleString()}`; });
         document.querySelectorAll(".cage-preset-btn").forEach(b => b.addEventListener("click", () => {
           const p = b.dataset.preset, st = Math.floor(profile.tableStack);
-          let val = p === "25" ? Math.floor(st * 0.25) : p === "50" ? Math.floor(st * 0.5) : p === "profit" ? Math.max(0, st - profile.sessionBuyIn) : st;
+          const profit = Math.max(0, getSessionNetPnL());
+          let val = p === "25" ? Math.floor(st * 0.25) : p === "50" ? Math.floor(st * 0.5) : p === "profit" ? Math.min(st, profit) : st;
           cSl.value = val; document.getElementById("cage-slider-label").textContent = `$${val.toLocaleString()}`;
         }));
         document.getElementById("btn-cashout-stay").addEventListener("click", () => executeCashOut(Number(cSl.value), false));
         document.getElementById("btn-cashout-leave").addEventListener("click", () => executeCashOut(profile.tableStack, true));
         function topUp(amt) {
           if (profile.safeVault < amt) { showSnackbar("Insufficient Safe Vault funds.", "error"); return; }
-          profile.safeVault -= amt; profile.tableStack += amt; profile.sessionBuyIn += amt;
+          profile.safeVault -= amt; profile.tableStack += amt;
           saveProfile(); if (roomState) sendAction({ kind: "BANK_SYNC", newStack: profile.tableStack });
           audio.playChip(); openCashierModal(); showSnackbar(`Transferred $${amt.toLocaleString()} to Table Stack!`);
         }
         document.getElementById("btn-topup-500").addEventListener("click", () => topUp(500));
         document.getElementById("btn-topup-1000").addEventListener("click", () => topUp(1000));
         document.getElementById("btn-emergency-stipend").addEventListener("click", () => {
-          profile.tableStack += 500; saveProfile();
+          profile.tableStack += 500;
+          profile.sessionStartTotal += 500;
+          saveProfile();
           if (roomState) sendAction({ kind: "BANK_SYNC", newStack: profile.tableStack });
           audio.playCash(); openCashierModal(); showSnackbar("Emergency VIP Stipend (+$500) credited!");
         });
@@ -3399,25 +3845,47 @@
         document.getElementById("admin-timer-range").addEventListener("input", e => { document.getElementById("admin-timer-val").textContent = `${e.target.value}s`; });
         document.getElementById("btn-admin-apply-rules").addEventListener("click", () => {
           if (!roomState) return;
+          const prevDecks = roomState.decks;
+          const newDecks = Math.max(1, Math.min(8, Number(document.getElementById("admin-decks-range").value) || 6));
+          const minB = Math.max(5, Math.floor(Number(document.getElementById("admin-min-bet").value) || 5));
+          const maxB = Math.max(minB, Math.floor(Number(document.getElementById("admin-max-bet").value) || 5000));
+
           roomState.mode = document.getElementById("admin-mode-select").value;
           roomState.bjPayout = Number(document.getElementById("admin-payout-select").value);
-          roomState.decks = Number(document.getElementById("admin-decks-range").value);
-          roomState.turnTimer = Number(document.getElementById("admin-timer-range").value);
-          roomState.minBet = Number(document.getElementById("admin-min-bet").value) || 5;
-          roomState.maxBet = Number(document.getElementById("admin-max-bet").value) || 5000;
+          roomState.decks = newDecks;
+          roomState.turnTimer = Math.max(10, Math.min(45, Number(document.getElementById("admin-timer-range").value) || 25));
+          roomState.minBet = minB;
+          roomState.maxBet = maxB;
           roomState.hitSoft17 = document.getElementById("admin-h17-toggle").checked;
           roomState.eventFreq = Number(document.getElementById("admin-event-freq").value);
+
+          if (newDecks !== prevDecks) {
+            roomState.shoe = buildShoe(newDecks);
+            roomState.shoeCount = roomState.shoe.length;
+            roomState.discardCount = 0;
+            roomState.runningCount = 0;
+          }
           roomState.ticker = `Host updated rules (${GAMEMODES[roomState.mode].name}).`;
           broadcastState(); showSnackbar("Host rules applied!");
         });
         document.getElementById("admin-event-freq").addEventListener("change", e => { if (roomState) { roomState.eventFreq = Number(e.target.value); broadcastState(); } });
         document.getElementById("btn-admin-reshuffle").addEventListener("click", () => {
           if (!roomState) return;
-          roomState.shoe = buildShoe(roomState.decks); roomState.discardCount = 0; roomState.runningCount = 0;
+          roomState.shoe = buildShoe(roomState.decks);
+          roomState.shoeCount = roomState.shoe.length;
+          roomState.discardCount = 0;
+          roomState.runningCount = 0;
           roomState.ticker = `Host reshuffled ${roomState.decks}-deck shoe!`;
           broadcastState(); showSnackbar("Shoe reshuffled!");
         });
-        document.getElementById("btn-admin-force-deal").addEventListener("click", () => { document.getElementById("admin-modal").classList.add("hidden"); startDealingRound(); });
+        document.getElementById("btn-admin-force-deal").addEventListener("click", () => {
+          if (!roomState || roomState.phase !== "BETTING") {
+            showSnackbar("Force Deal is only available during the Betting phase.", "error");
+            return;
+          }
+          document.getElementById("admin-modal").classList.add("hidden");
+          startDealingRound();
+        });
         document.getElementById("btn-admin-gift-all").addEventListener("click", () => {
           if (!roomState) return;
           roomState.seats.forEach(s => { if (s) s.bankroll += 500; });
@@ -3434,7 +3902,12 @@
         });
         document.getElementById("btn-admin-pause").addEventListener("click", () => {
           if (!roomState) return;
-          roomState.paused = !roomState.paused; broadcastState(); populateAdminModal();
+          roomState.paused = !roomState.paused;
+          if (!roomState.paused && roomState.phase === "PLAYER_TURNS") {
+            roomState.phaseEndsAt = Date.now() + (roomState.turnTimer * 1000);
+            scheduleBotTurn();
+          }
+          broadcastState(); populateAdminModal();
         });
 
         // E2E Vault Bindings
@@ -3466,14 +3939,25 @@
           if (!pass || !code) { showSnackbar("Enter passphrase and backup string.", "error"); return; }
           try {
             const restored = await decryptProfile(code, pass);
+            const cleanStack = Math.max(0, Math.floor(Number(restored.tableStack) || 0));
+            const cleanVault = Math.max(0, Math.floor(Number(restored.safeVault) || 0));
             profile = {
               ...profile,
               ...restored,
+              name: String(restored.name || "Royal Guest").trim().slice(0, 16) || "Royal Guest",
+              avatar: AVATARS.includes(restored.avatar) ? restored.avatar : profile.avatar,
+              tableStack: cleanStack,
+              safeVault: cleanVault,
+              sessionStartTotal: Number.isFinite(restored.sessionStartTotal) ? restored.sessionStartTotal : (cleanStack + cleanVault),
               stats: { ...profile.stats, ...(restored.stats || {}) },
               settings: { ...DEFAULT_SETTINGS, ...(restored.settings || {}) }
             };
             saveProfile(); applySettingsToDOM();
-            if (roomState) { sendAction({ kind: "BANK_SYNC", newStack: profile.tableStack }); renderTable(); }
+            if (roomState) {
+              sendAction({ kind: "BANK_SYNC", newStack: profile.tableStack });
+              sendAction({ kind: "PROFILE_SYNC", name: profile.name, avatar: profile.avatar });
+              renderTable();
+            }
             showSnackbar("Vault decrypted & all Settings/Themes restored!");
             document.getElementById("e2e-modal").classList.add("hidden");
           } catch (e) {
