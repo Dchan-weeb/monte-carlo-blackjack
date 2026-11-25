@@ -646,6 +646,11 @@
             <span>VIP Boutique</span>
           </button>
 
+          <button id="btn-lobby-achievements" class="ui-pill px-3 py-2 bg-black/45 hover:bg-black/65 border border-amber-400/35 text-xs text-amber-200" title="Achievements & Bonus Vault Quests">
+            <span class="material-symbols-rounded text-base text-amber-300">emoji_events</span>
+            <span class="hidden md:inline">Quests</span>
+          </button>
+
           <button id="btn-lobby-music-quick" class="ui-pill px-3 py-2 bg-black/45 hover:bg-black/65 border border-white/15 text-xs text-white" title="Open Lounge FM & Audio Drawer">
             <div id="lobby-music-eq" class="flex items-end gap-[2px] h-3.5 w-3.5 justify-center">
               <span class="eq-bar eq-bar-1 h-1.5"></span>
@@ -841,6 +846,12 @@
           <span class="hidden xl:inline">P&amp;L</span>
         </button>
 
+        <button id="btn-toggle-chat" class="relative ui-pill w-9 h-9 sm:w-auto sm:px-2.5 theme-surface text-sky-200 text-xs" title="Room Chat & Quick-Callout Soundboard">
+          <span class="material-symbols-rounded text-base">forum</span>
+          <span class="hidden xl:inline">Chat</span>
+          <span id="chat-unread-dot" class="hidden absolute top-1 right-1 w-2 h-2 rounded-full bg-rose-500"></span>
+        </button>
+
         <button id="btn-toggle-strategy" class="ui-pill w-9 h-9 sm:w-auto sm:px-2.5 theme-surface text-emerald-300 text-xs" title="Strategy Coach & Live Odds">
           <span class="material-symbols-rounded text-base">psychology</span>
           <span class="hidden xl:inline">Coach</span>
@@ -1028,17 +1039,17 @@
           </div>
         </div>
 
-        <!-- ACE-UPCARD INSURANCE PROMPT PHASE (8-Second Pre-Turn Window) -->
+        <!-- ACE-UPCARD INSURANCE / EVEN MONEY PROMPT PHASE (8-Second Pre-Turn Window) -->
         <div id="insurance-controls" class="hidden w-full flex flex-wrap items-center justify-center gap-2 py-1">
           <span class="text-xs font-semibold text-sky-200 flex items-center gap-1">
             <span class="material-symbols-rounded text-base text-sky-300">shield</span>
-            <span>Dealer shows Ace — Insurance pays 2:1?</span>
+            <span id="insurance-prompt-text">Dealer shows Ace — Insurance pays 2:1?</span>
           </span>
           <button id="btn-take-insurance" class="ui-pill px-4 py-2 bg-sky-400 hover:bg-sky-300 text-black text-xs uppercase">
             <span id="btn-take-insurance-label">Take Insurance ($0)</span>
           </button>
           <button id="btn-decline-insurance" class="ui-pill px-4 py-2 bg-white/15 hover:bg-white/25 text-white text-xs uppercase">
-            No Thanks
+            <span id="btn-decline-insurance-label">No Thanks</span>
           </button>
         </div>
 
@@ -1069,6 +1080,17 @@
           <span id="waiting-subtext" class="text-xs sm:text-sm text-slate-200">Waiting for other players...</span>
           <button id="btn-next-round" class="hidden ui-pill btn-primary-theme px-5 py-2 text-xs uppercase">New Round</button>
         </div>
+
+        <!-- SPECTATOR & BET BEHIND CONTROLS -->
+        <div id="spectator-controls" class="hidden w-full flex flex-wrap items-center justify-center gap-2 py-1 text-xs">
+          <span class="px-2.5 py-1 rounded-full bg-indigo-500/25 border border-indigo-400/50 text-indigo-200 font-mono text-[11px]">👁️ SPECTATOR • BET BEHIND</span>
+          <select id="spectator-seat-select" class="rounded-full bg-black/65 border border-white/20 px-3 py-1.5 text-xs text-white font-semibold"></select>
+          <button id="btn-bet-behind-25" class="ui-pill px-3 py-1.5 bg-emerald-500/85 hover:bg-emerald-400 text-black text-xs">+$25</button>
+          <button id="btn-bet-behind-100" class="ui-pill px-3 py-1.5 btn-primary-theme text-xs">+$100</button>
+          <button id="btn-bet-behind-clear" class="ui-pill px-3 py-1.5 bg-white/15 hover:bg-white/25 text-white text-xs">Clear</button>
+          <span id="spectator-bet-status" class="font-mono text-amber-300 font-bold">Bet: $0</span>
+          <button id="btn-take-open-seat" class="hidden ui-pill px-3.5 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-black text-xs uppercase">Take Open Seat</button>
+        </div>
       </div>
     </footer>
   </div>
@@ -1085,6 +1107,27 @@
       <div id="coach-advice-box" class="p-3 rounded-2xl bg-black/45 border border-white/10 flex items-center justify-between">
         <span class="text-slate-300">Optimal Move:</span>
         <span id="strategy-advice-badge" class="font-mono font-extrabold text-sm theme-accent-text uppercase">WAITING</span>
+      </div>
+
+      <!-- Live Strategy Grader -->
+      <div class="p-2.5 rounded-2xl bg-black/45 border border-emerald-400/25 space-y-1">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-mono uppercase text-emerald-300">Strategy Accuracy</span>
+          <span id="grader-accuracy-val" class="font-mono font-extrabold text-sm text-white">—</span>
+        </div>
+        <div id="grader-last-note" class="text-[10px] text-slate-400">Make a play to grade against Basic Strategy.</div>
+      </div>
+
+      <!-- Hi-Lo Card Counting Drill -->
+      <div class="p-2.5 rounded-2xl bg-indigo-950/40 border border-indigo-400/35 flex items-center justify-between gap-2">
+        <div>
+          <div class="text-[10px] font-mono uppercase text-indigo-300">Hi-Lo Count Drill</div>
+          <div id="drill-status-sub" class="text-[10px] text-slate-300">Hides count &amp; quizzes every 3 hands</div>
+        </div>
+        <div class="flex items-center gap-1">
+          <button id="btn-toggle-drill" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-[10px] font-bold text-white">OFF</button>
+          <button id="btn-drill-quiz-now" class="hidden px-2.5 py-1 rounded-full bg-indigo-500 hover:bg-indigo-400 text-[10px] font-bold text-white">Quiz</button>
+        </div>
       </div>
 
       <div class="grid grid-cols-2 gap-2">
@@ -1152,6 +1195,81 @@
       <div class="text-center text-slate-500 py-6">Play a hand to log history.</div>
     </div>
   </aside>
+
+  <!-- =========================================================================
+       DRAWER 3: ROOM CHAT & QUICK-CALLOUT SOUNDBOARD
+       ========================================================================= -->
+  <aside id="chat-drawer" class="hidden fixed right-3 bottom-24 z-40 w-80 max-w-[92vw] theme-surface-elevated rounded-3xl p-4 sheet-anim max-h-[68dvh] flex flex-col">
+    <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-rounded text-sky-300 text-lg">forum</span>
+        <span class="font-serif text-xs font-extrabold tracking-wider uppercase theme-accent-text">Table Chat &amp; Soundboard</span>
+      </div>
+      <button id="btn-close-chat" class="text-slate-400 hover:text-white"><span class="material-symbols-rounded text-lg">close</span></button>
+    </div>
+
+    <!-- Quick-Callout Soundboard -->
+    <div id="chat-soundboard-grid" class="grid grid-cols-2 gap-1.5 mb-2.5 text-[11px]"></div>
+
+    <!-- Messages Feed -->
+    <div id="chat-messages-list" class="flex-1 overflow-y-auto space-y-1.5 pr-1 mb-2.5 min-h-[120px] max-h-[210px] text-xs bg-black/35 rounded-2xl p-2.5 border border-white/10">
+      <div class="text-center text-slate-500 py-4">Say hello or fire a quick callout!</div>
+    </div>
+
+    <!-- Input Row -->
+    <div class="flex items-center gap-1.5">
+      <input id="chat-input" type="text" maxlength="100" placeholder="Type a message..."
+        class="flex-1 rounded-full bg-black/60 border border-white/15 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-sky-400" />
+      <button id="btn-send-chat" class="ui-pill px-3.5 py-2 bg-sky-500 hover:bg-sky-400 text-black text-xs">Send</button>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MODAL: ACHIEVEMENTS & BONUS VAULT QUESTS
+       ========================================================================= -->
+  <div id="achievements-modal" class="hidden fixed inset-0 z-[68] bg-black/75 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="theme-surface-elevated sheet-anim w-full max-w-xl rounded-t-[32px] sm:rounded-[32px] p-5 sm:p-6 max-h-[90dvh] overflow-y-auto safe-bottom-pad">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-rounded text-amber-300 text-2xl">emoji_events</span>
+          <div>
+            <h3 class="font-serif text-xl font-black text-white leading-tight">ACHIEVEMENTS &amp; VAULT QUESTS</h3>
+            <div id="achievements-summary" class="text-[11px] font-mono text-slate-300">0 / 6 Unlocked • Earn Bonus Safe Vault Chips</div>
+          </div>
+        </div>
+        <button id="btn-close-achievements" class="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-slate-200"><span class="material-symbols-rounded">close</span></button>
+      </div>
+      <div id="achievements-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: HI-LO CARD-COUNTING DRILL QUIZ
+       ========================================================================= -->
+  <div id="drill-modal" class="hidden fixed inset-0 z-[71] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="theme-surface-elevated sheet-anim w-full max-w-md rounded-[28px] p-6">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-rounded text-indigo-300 text-2xl">school</span>
+          <h3 class="font-serif text-xl font-black text-white">HI-LO COUNT CHECK</h3>
+        </div>
+        <button id="btn-close-drill" class="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-slate-200"><span class="material-symbols-rounded">close</span></button>
+      </div>
+      <p class="text-xs text-slate-300 mb-4">Enter your estimate of the current shoe count. Exact Running Count match awards <strong class="text-emerald-300">+$150 Safe Vault</strong>!</p>
+      <div class="grid grid-cols-2 gap-3 mb-4 text-xs">
+        <div>
+          <label class="block text-[10px] font-mono uppercase text-indigo-300 mb-1">Running Count</label>
+          <input id="drill-rc-input" type="number" step="1" placeholder="e.g. +4" class="w-full rounded-xl bg-black/65 border border-white/20 px-3 py-2.5 font-mono text-white text-center text-base" />
+        </div>
+        <div>
+          <label class="block text-[10px] font-mono uppercase text-indigo-300 mb-1">True Count</label>
+          <input id="drill-tc-input" type="number" step="0.5" placeholder="e.g. +1.0" class="w-full rounded-xl bg-black/65 border border-white/20 px-3 py-2.5 font-mono text-white text-center text-base" />
+        </div>
+      </div>
+      <div id="drill-result-box" class="hidden mb-4 p-3 rounded-2xl bg-black/50 border border-white/15 text-xs"></div>
+      <button id="btn-submit-drill" class="w-full ui-pill btn-primary-theme py-3 text-xs uppercase">Check My Count</button>
+    </div>
+  </div>
 
   <!-- =========================================================================
        MODAL: LOUNGE FM & AUDIO DRAWER (REPLACES OVERLAPPING FLOATING PILL)
@@ -1648,6 +1766,20 @@
             <span class="font-semibold text-white">Dealer Hits Soft 17 (H17)</span>
             <input id="admin-h17-toggle" type="checkbox" class="w-4 h-4 accent-amber-400" />
           </label>
+          <label class="p-3 rounded-2xl bg-black/45 border border-white/10 flex items-center justify-between cursor-pointer">
+            <div>
+              <div class="font-semibold text-white">5-Card Charlie</div>
+              <div class="text-[10px] text-slate-400">5 cards without busting auto-wins</div>
+            </div>
+            <input id="admin-charlie-toggle" type="checkbox" class="w-4 h-4 accent-amber-400" />
+          </label>
+          <label class="p-3 rounded-2xl bg-black/45 border border-white/10 flex items-center justify-between cursor-pointer">
+            <div>
+              <div class="font-semibold text-white">Resplit Aces</div>
+              <div class="text-[10px] text-slate-400">Allow splitting Aces up to 3 hands</div>
+            </div>
+            <input id="admin-resplit-aces-toggle" type="checkbox" class="w-4 h-4 accent-amber-400" />
+          </label>
           <label class="p-3 rounded-2xl bg-fuchsia-950/35 border border-fuchsia-400/35 flex items-center justify-between cursor-pointer sm:col-span-2">
             <div>
               <div class="font-bold text-fuchsia-200">Enable Tactical Power-Ups</div>
@@ -1838,6 +1970,24 @@
 
       const AVATARS = ["👑", "🎩", "💎", "🐆", "🍸", "♠️", "🦊", "🐉"];
 
+      const ACHIEVEMENTS = [
+        { id: "natural_born",  name: "Natural Born",   icon: "🃏", reward: 500, desc: "Hit 3 Natural Blackjacks in a single session." },
+        { id: "hot_streak",    name: "Hot Streak",     icon: "🔥", reward: 600, desc: "Win 5 hands in a row without losing." },
+        { id: "phoenix",       name: "Phoenix",        icon: "🦅", reward: 750, desc: "Climb back above $1,000 after dropping under $100." },
+        { id: "side_hustler",  name: "Side Hustler",   icon: "💎", reward: 400, desc: "Win a Perfect Pairs or 21+3 side bet." },
+        { id: "charlie_champ", name: "5-Card Charlie", icon: "⭐", reward: 500, desc: "Win a hand via the 5-Card Charlie rule." },
+        { id: "sharp_mind",    name: "Sharp Mind",     icon: "🧠", reward: 500, desc: "Maintain 90%+ Basic Strategy accuracy over 10+ moves." }
+      ];
+
+      const CHAT_CALLOUTS = [
+        { text: "Hit it! 🎯",              freq: 660 },
+        { text: "Dealer's gonna bust! 💥", freq: 523 },
+        { text: "All in! 💎",              freq: 880 },
+        { text: "Nice Blackjack! 👑",      freq: 1046 },
+        { text: "Hold the line! 🛡️",      freq: 440 },
+        { text: "Cheers! 🥂",              freq: 1318 }
+      ];
+
       /* -----------------------------------------------------------------------
        * 2. PERSISTENT PROFILE, COSMETICS, POWER-UPS & HAND HISTORY STATE
        * --------------------------------------------------------------------- */
@@ -1866,7 +2016,8 @@
         sfxVol: 0.85,
         sfxEnabled: true,
         fanfare: true,
-        streamerMode: false
+        streamerMode: false,
+        countDrill: false
       };
 
       const DEFAULT_UNLOCKS = {
@@ -1902,16 +2053,25 @@
           titles: [...DEFAULT_UNLOCKS.titles],
           auras: [...DEFAULT_UNLOCKS.auras]
         },
+        achievements: [],
+        sessionBJs: 0,
+        lowestStack: 2500,
+        drillCorrect: 0,
+        drillTotal: 0,
         powerups: { ...DEFAULT_POWERUPS },
         settings: { ...DEFAULT_SETTINGS }
       };
 
       let guardrailDismissed = false;
-      let sessionHistory = []; // { cards, dealerTotal, bet, outcome, delta, sideNote }
-      let pnlCurve = [0];      // cumulative session P&L snapshots
+      let sessionHistory = [];
+      let pnlCurve = [0];
       let privateXrayCard = null;
       let tshopPaySource = "stack";
       let activeBoutiqueTab = "themes";
+      let strategyStats = { optimal: 0, total: 0, lastMistake: null };
+      let handsSinceDrill = 0;
+      let lastSoundboardTs = 0;
+      let seenChatCount = 0;
 
       function getSessionNetPnL() {
         const currentTotal = (Number(profile.tableStack) || 0) + (Number(profile.safeVault) || 0);
@@ -1946,6 +2106,11 @@
                 titles: Array.from(new Set([...DEFAULT_UNLOCKS.titles, ...((p.unlocks && p.unlocks.titles) || [])])),
                 auras: Array.from(new Set([...DEFAULT_UNLOCKS.auras, ...((p.unlocks && p.unlocks.auras) || [])]))
               },
+              achievements: Array.isArray(p.achievements) ? Array.from(new Set(p.achievements)) : [],
+              sessionBJs: Number(p.sessionBJs) || 0,
+              lowestStack: Number.isFinite(p.lowestStack) ? p.lowestStack : (Number(p.tableStack) || 2500),
+              drillCorrect: Number(p.drillCorrect) || 0,
+              drillTotal: Number(p.drillTotal) || 0,
               powerups: { ...DEFAULT_POWERUPS, ...(p.powerups || {}) },
               settings: { ...DEFAULT_SETTINGS, ...(p.settings || {}) }
             };
@@ -2277,6 +2442,13 @@
           this.init();
           [440, 554.37, 659.25, 880].forEach((n, i) => this.tone(n, 0.38, "triangle", 0.12, this.sfxGain, i * 0.06));
         }
+
+        playSoundboard(baseFreq = 660) {
+          if (!this.sfxEnabled) return;
+          this.init();
+          this.tone(baseFreq, 0.14, "triangle", 0.14, this.sfxGain, 0);
+          this.tone(baseFreq * 1.25, 0.22, "sine", 0.12, this.sfxGain, 0.07);
+        }
       }
 
       const audio = new ProceduralCasinoAudio();
@@ -2590,7 +2762,7 @@
         return out;
       }
 
-      function makeSeat(id, name, avatar, bankroll, isBot = false, title = "vip_guest", aura = "none") {
+      function makeSeat(id, name, avatar, bankroll, isBot = false, title = "vip_guest", aura = "none", badges = []) {
         const cleanName = String(name || "Royal Guest").trim().slice(0, 16) || "Royal Guest";
         const cleanAvatar = AVATARS.includes(avatar) ? avatar : "👑";
         return {
@@ -2599,6 +2771,7 @@
           avatar: cleanAvatar,
           title: VIP_TITLES.some(t => t.id === title) ? title : "vip_guest",
           aura: AVATAR_AURAS.some(a => a.id === aura) ? aura : "none",
+          badges: Array.isArray(badges) ? badges.slice(0, 2) : [],
           bankroll: Math.max(0, Math.floor(Number(bankroll) || 0)),
           isBot,
           pendingBet: 0,
@@ -2621,11 +2794,13 @@
           decks: m.decks, bjPayout: m.bjPayout, turnTimer: m.timer,
           minBet: m.minBet, maxBet: m.maxBet, hitSoft17: m.hitSoft17,
           eventFreq: m.eventFreq, powerupsEnabled: true,
+          fiveCardCharlie: false, resplitAces: false,
           paused: false, phase: "BETTING",
           phaseEndsAt: Date.now() + 20000, activeSeatIndex: 0, activeHandIndex: 0,
           shoe, shoeCount: shoe.length, discardCount: 0, runningCount: 0,
           dealerHand: [], dealerFrozen: false,
           activeEvent: null, eventTs: 0, champagneToast: null,
+          spectators: [], chatLog: [], soundboardPing: null,
           ticker: `Welcome to ${m.name}! Place your chips to deal.`,
           seats: [hostSeat, null, null, null]
         };
@@ -2647,10 +2822,11 @@
         if (roomState.shoe && roomState.shoe.length > 0) {
           roomState.shoeCount = roomState.shoe.length;
         }
-        const me = roomState.seats.find(s => s && s.id === profile.id);
+        const me = roomState.seats.find(s => s && s.id === profile.id) || (roomState.spectators || []).find(sp => sp.id === profile.id);
         if (me) {
           profile.tableStack = me.bankroll;
-          profile.streak = me.streak || 0;
+          if (me.streak != null) profile.streak = me.streak || 0;
+          if (profile.tableStack < profile.lowestStack) profile.lowestStack = profile.tableStack;
           saveProfile();
         }
         renderTable();
@@ -2800,8 +2976,20 @@
           startDealingRound();
         } else if (action.kind === "INSURANCE_DECISION" && roomState.phase === "INSURANCE" && seat) {
           if (seat.insuranceDecided || !seat.hands.length) return;
-          if (action.accept) {
-            const cost = Math.floor((seat.hands[0].wagered || seat.hands[0].bet) / 2);
+          const h0 = seat.hands[0];
+          if (h0.status === "BLACKJACK") {
+            // Even Money offer when player has Natural Blackjack vs Dealer Ace
+            if (action.accept) {
+              const stake = h0.wagered != null ? h0.wagered : h0.bet;
+              const pay = stake * 2;
+              seat.bankroll += pay;
+              h0.status = "EVEN_MONEY";
+              h0.payout = pay;
+              audio.playCash();
+              roomState.ticker = `${seat.name} took EVEN MONEY (+$${pay.toLocaleString()})!`;
+            }
+          } else if (action.accept) {
+            const cost = Math.floor((h0.wagered || h0.bet) / 2);
             if (cost > 0 && seat.bankroll >= cost) {
               seat.bankroll -= cost;
               seat.insuranceBet = cost;
@@ -2854,7 +3042,44 @@
           seat.avatar = AVATARS.includes(action.avatar) ? action.avatar : seat.avatar;
           if (VIP_TITLES.some(t => t.id === action.title)) seat.title = action.title;
           if (AVATAR_AURAS.some(a => a.id === action.aura)) seat.aura = action.aura;
+          if (Array.isArray(action.badges)) seat.badges = action.badges.slice(0, 2);
           broadcastState();
+        } else if (action.kind === "CHAT_MSG") {
+          const sender = seat || (roomState.spectators || []).find(sp => sp.id === playerId);
+          if (!sender) return;
+          const txt = String(action.text || "").trim().slice(0, 100);
+          if (!txt) return;
+          roomState.chatLog = roomState.chatLog || [];
+          roomState.chatLog.push({ sender: sender.name, avatar: sender.avatar, text: txt, ts: Date.now() });
+          if (roomState.chatLog.length > 30) roomState.chatLog.shift();
+          if (action.calloutFreq) {
+            roomState.soundboardPing = { freq: Number(action.calloutFreq) || 660, ts: Date.now() };
+          }
+          broadcastState();
+        } else if (action.kind === "BET_BEHIND" && roomState.phase === "BETTING") {
+          const sp = (roomState.spectators || []).find(x => x.id === playerId);
+          if (!sp) return;
+          const targetIdx = Number(action.seatIndex);
+          if (action.clear) {
+            sp.betBehind = null;
+          } else if (targetIdx >= 0 && targetIdx < 4 && roomState.seats[targetIdx]) {
+            const add = Math.floor(Number(action.amount) || 0);
+            const curAmt = (sp.betBehind && sp.betBehind.seatIndex === targetIdx) ? sp.betBehind.amount : 0;
+            if (add > 0 && sp.bankroll >= curAmt + add && curAmt + add <= roomState.maxBet) {
+              sp.betBehind = { seatIndex: targetIdx, amount: curAmt + add, active: false };
+              audio.playChip();
+            }
+          }
+          broadcastState();
+        } else if (action.kind === "TAKE_SEAT") {
+          const spIdx = (roomState.spectators || []).findIndex(x => x.id === playerId);
+          const openIdx = roomState.seats.findIndex(s => s === null);
+          if (spIdx !== -1 && openIdx !== -1) {
+            const sp = roomState.spectators.splice(spIdx, 1)[0];
+            roomState.seats[openIdx] = makeSeat(sp.id, sp.name, sp.avatar, sp.bankroll, false, sp.title, sp.aura, sp.badges);
+            roomState.ticker = `${sp.name} took Seat ${openIdx + 1}!`;
+            broadcastState();
+          }
         }
       }
 
@@ -2954,13 +3179,27 @@
           }
         });
 
-        // Dealer Peek & Ace-Upcard Insurance Flow
+        // Lock Spectator Bet Behind wagers
+        (roomState.spectators || []).forEach(sp => {
+          if (sp.betBehind && sp.betBehind.amount > 0 && sp.bankroll >= sp.betBehind.amount) {
+            const target = roomState.seats[sp.betBehind.seatIndex];
+            if (target && target.hands.length > 0) {
+              sp.bankroll -= sp.betBehind.amount;
+              sp.betBehind.active = true;
+            } else {
+              sp.betBehind = null;
+            }
+          }
+        });
+
+        // Dealer Peek & Ace-Upcard Insurance / Even Money Flow
         const holeCard = roomState.dealerHand[1];
         if (dealerUp && dealerUp.rank === "A") {
-          // 8-Second Insurance Phase before Dealer Peek!
+          // 8-Second Insurance / Even Money Phase before Dealer Peek!
           roomState.seats.forEach(s => {
             if (!s) return;
-            if (!s.hands.length || s.isBot || s.bankroll < Math.floor(s.hands[0].bet / 2)) {
+            const hasBJ = s.hands.length > 0 && s.hands[0].status === "BLACKJACK";
+            if (!s.hands.length || s.isBot || (!hasBJ && s.bankroll < Math.floor(s.hands[0].bet / 2))) {
               s.insuranceDecided = true;
             }
           });
@@ -3149,6 +3388,15 @@
         if (ev.isBust) {
           handleHandBust(s, h, ev);
           advanceTurn();
+        } else if (roomState.fiveCardCharlie && h.cards.length >= 5) {
+          const stake = h.wagered != null ? h.wagered : h.bet;
+          const total = stake + Math.floor(h.bet * (h.hasBoost2x ? 2 : 1));
+          s.bankroll += total;
+          h.status = "CHARLIE";
+          h.payout = total;
+          roomState.ticker = `⭐ ${s.name} hit a 5-CARD CHARLIE (+$${total.toLocaleString()})!`;
+          if (s.id === profile.id) { audio.playWin(true); spawnCelebration(80); checkAndUnlockAchievement("charlie_champ"); }
+          advanceTurn();
         } else if (ev.total === 21) {
           h.status = "STAND";
           roomState.ticker = `${s.name} hit 21!`;
@@ -3202,8 +3450,12 @@
       function doSplit(sIdx) {
         const s = roomState.seats[sIdx];
         if (!s) return;
-        const h = s.hands[0];
-        if (!h || h.status !== "PLAYING" || s.hands.length > 1 || h.cards.length !== 2) return;
+        const hIdx = roomState.activeHandIndex;
+        const h = s.hands[hIdx];
+        if (!h || h.status !== "PLAYING" || h.cards.length !== 2) return;
+        const isPairAces = h.cards[0].rank === "A" && h.cards[1].rank === "A";
+        const maxHands = (roomState.resplitAces && isPairAces) ? 3 : 2;
+        if (s.hands.length >= maxHands) return;
         if (cardVal(h.cards[0].rank) !== cardVal(h.cards[1].rank)) return;
         if (s.bankroll < h.bet) return;
 
@@ -3213,7 +3465,7 @@
         const hand2 = { cards: [c2, drawCard(roomState, true)], bet: h.bet, wagered: h.bet, isSplit: true, status: "PLAYING", payout: 0, usedPowerups: [], hasBustShield: false, hasDeckMagnet: false, hasBoost2x: false };
         if (evaluateHand(hand1.cards, true).total === 21) hand1.status = "STAND";
         if (evaluateHand(hand2.cards, true).total === 21) hand2.status = "STAND";
-        s.hands = [hand1, hand2];
+        s.hands.splice(hIdx, 1, hand1, hand2);
         roomState.phaseEndsAt = Date.now() + (roomState.turnTimer * 1000);
         audio.playChip(); audio.playCard();
         roomState.ticker = `${s.name} split into 2 hands!`;
@@ -3263,8 +3515,8 @@
           profile.stats.handsPlayed++;
           const stake = h.wagered != null ? h.wagered : h.bet;
           const delta = (h.payout || 0) - stake;
-          if (h.status === "BLACKJACK") { profile.stats.wins++; localWon = true; localBJ = true; }
-          else if (h.status === "WIN") { profile.stats.wins++; localWon = true; }
+          if (h.status === "BLACKJACK") { profile.stats.wins++; profile.sessionBJs = (profile.sessionBJs || 0) + 1; localWon = true; localBJ = true; }
+          else if (h.status === "WIN" || h.status === "CHARLIE" || h.status === "EVEN_MONEY") { profile.stats.wins++; localWon = true; }
           else if (h.status === "PUSH" || h.status === "CASHED_OUT" || h.status === "SHIELDED") { profile.stats.pushes++; }
           else if (h.status === "LOSE" || h.status === "BUST" || h.status === "SURRENDERED") { profile.stats.losses++; localLost = true; }
 
@@ -3283,9 +3535,18 @@
         if (pnlCurve.length > 25) pnlCurve.shift();
         renderHistoryDrawer();
 
+        evaluateSessionAchievements(mySeat);
         saveProfile();
         if (localWon) { audio.playWin(localBJ); spawnCelebration(localBJ ? 110 : 60); flashEdge("win"); }
         else if (localLost) { audio.playBust(); flashEdge("bust"); }
+
+        if (profile.settings.countDrill) {
+          handsSinceDrill++;
+          if (handsSinceDrill >= 3) {
+            handsSinceDrill = 0;
+            setTimeout(() => { if (roomState) openDrillModal(); }, 1100);
+          }
+        }
       }
 
       function resolveDealerAndPayouts() {
@@ -3320,7 +3581,10 @@
             : 1;
 
           s.hands.forEach(h => {
-            if (h.status === "CASHED_OUT" || h.status === "SURRENDERED" || h.status === "SHIELDED") return;
+            if (h.status === "CASHED_OUT" || h.status === "SURRENDERED" || h.status === "SHIELDED" || h.status === "EVEN_MONEY" || h.status === "CHARLIE") {
+              if (h.status === "EVEN_MONEY" || h.status === "CHARLIE") wonAny = true;
+              return;
+            }
             const pEv = evaluateHand(h.cards, h.isSplit);
             const stake = h.wagered != null ? h.wagered : h.bet;
 
@@ -3354,6 +3618,20 @@
           else if (lostAny) s.streak = 0;
 
           if (s.id === profile.id) applyLocalOutcomeFeedback(s);
+        });
+
+        // Settle Spectator Bet Behind wagers
+        (roomState.spectators || []).forEach(sp => {
+          if (!sp.betBehind || !sp.betBehind.active) return;
+          const target = roomState.seats[sp.betBehind.seatIndex];
+          const th = target && target.hands[0];
+          const amt = sp.betBehind.amount;
+          if (th) {
+            if (th.status === "BLACKJACK") sp.bankroll += amt + Math.floor(amt * (roomState.bjPayout || 1.5));
+            else if (th.status === "WIN" || th.status === "CHARLIE" || th.status === "EVEN_MONEY") sp.bankroll += amt * 2;
+            else if (th.status === "PUSH" || th.status === "SHIELDED") sp.bankroll += amt;
+          }
+          sp.betBehind.active = false;
         });
 
         roomState.ticker = dEv.isBust
@@ -3449,7 +3727,8 @@
       function startSoloTable() {
         audio.init();
         isSoloMode = true; isHost = true; peerConnected = false;
-        const me = makeSeat(profile.id, profile.name, profile.avatar, profile.tableStack, false, profile.equippedTitle, profile.equippedAura);
+        const myBadges = (profile.achievements || []).slice(0, 2).map(id => (ACHIEVEMENTS.find(a => a.id === id) || {}).icon).filter(Boolean);
+        const me = makeSeat(profile.id, profile.name, profile.avatar, profile.tableStack, false, profile.equippedTitle, profile.equippedAura, myBadges);
         const b1 = makeSeat("bot_1", "Duchess Camille", "💎", 3500, true, "high_roller", "gold_halo");
         const b2 = makeSeat("bot_2", "Baron Vance", "🎩", 4800, true, "pit_boss", "emerald_pulse");
         roomState = createRoomState("SOLO", selectedLobbyMode, me);
@@ -3472,7 +3751,8 @@
         peer.on("open", () => {
           peerConnected = true;
           isSoloMode = false; isHost = true;
-          const me = makeSeat(profile.id, profile.name, profile.avatar, profile.tableStack, false, profile.equippedTitle, profile.equippedAura);
+          const myBadges = (profile.achievements || []).slice(0, 2).map(id => (ACHIEVEMENTS.find(a => a.id === id) || {}).icon).filter(Boolean);
+          const me = makeSeat(profile.id, profile.name, profile.avatar, profile.tableStack, false, profile.equippedTitle, profile.equippedAura, myBadges);
           roomState = createRoomState(code, selectedLobbyMode, me);
           enterTableUI(code);
           showSnackbar(`Room ${code} is live! Share your code or Invite link.`);
@@ -3484,8 +3764,23 @@
               const p = msg.player || {};
               let idx = roomState.seats.findIndex(s => s && s.id === p.id);
               if (idx === -1) idx = roomState.seats.findIndex(s => s === null);
-              if (idx === -1) { conn.send({ type: "ERROR", message: "Table is full (4/4)." }); return; }
-              roomState.seats[idx] = makeSeat(p.id, p.name, p.avatar, p.bankroll, false, p.title || "vip_guest", p.aura || "none");
+              if (idx === -1) {
+                // Join as Spectator (Bet Behind Mode)
+                roomState.spectators = (roomState.spectators || []).filter(sp => sp.id !== p.id);
+                roomState.spectators.push({
+                  id: p.id, name: String(p.name || "Spectator").slice(0, 16),
+                  avatar: AVATARS.includes(p.avatar) ? p.avatar : "👑",
+                  title: p.title || "vip_guest", aura: p.aura || "none",
+                  badges: Array.isArray(p.badges) ? p.badges.slice(0, 2) : [],
+                  bankroll: Math.max(0, Math.floor(Number(p.bankroll) || 0)),
+                  betBehind: null
+                });
+                clientConns.set(p.id, conn);
+                roomState.ticker = `👁️ ${String(p.name || "Guest").slice(0, 16)} joined as a Spectator (Bet Behind)!`;
+                broadcastState();
+                return;
+              }
+              roomState.seats[idx] = makeSeat(p.id, p.name, p.avatar, p.bankroll, false, p.title || "vip_guest", p.aura || "none", p.badges || []);
               clientConns.set(p.id, conn);
               roomState.ticker = `${roomState.seats[idx].name} joined Seat ${idx + 1}!`;
               broadcastState();
@@ -3532,7 +3827,8 @@
               type: "JOIN",
               player: {
                 id: profile.id, name: profile.name, avatar: profile.avatar,
-                bankroll: profile.tableStack, title: profile.equippedTitle, aura: profile.equippedAura
+                bankroll: profile.tableStack, title: profile.equippedTitle, aura: profile.equippedAura,
+                badges: (profile.achievements || []).slice(0, 2).map(id => (ACHIEVEMENTS.find(a => a.id === id) || {}).icon).filter(Boolean)
               }
             });
           });
@@ -3834,6 +4130,12 @@
           showEventBanner(RANDOM_EVENTS[roomState.activeEvent]);
         }
 
+        if (roomState.soundboardPing && roomState.soundboardPing.ts && roomState.soundboardPing.ts !== lastSoundboardTs) {
+          lastSoundboardTs = roomState.soundboardPing.ts;
+          audio.playSoundboard(roomState.soundboardPing.freq);
+        }
+        renderChatDrawer();
+
         if (roomState.champagneToast && roomState.champagneToast.ts && roomState.champagneToast.ts !== lastToastTs) {
           lastToastTs = roomState.champagneToast.ts;
           audio.playClink();
@@ -3937,6 +4239,8 @@
               let pill = "";
               if (h.status === "BLACKJACK") pill = `<span class="px-2 py-0.5 rounded-full bg-amber-400 text-black font-extrabold text-[9px] sm:text-[10px]">BJ +$${h.payout.toLocaleString()}</span>`;
               else if (h.status === "WIN") pill = `<span class="px-2 py-0.5 rounded-full bg-emerald-400 text-black font-extrabold text-[9px] sm:text-[10px]">WIN +$${h.payout.toLocaleString()}</span>`;
+              else if (h.status === "CHARLIE") pill = `<span class="px-2 py-0.5 rounded-full bg-amber-300 text-black font-extrabold text-[9px] sm:text-[10px]">⭐ 5-CARD +$${h.payout.toLocaleString()}</span>`;
+              else if (h.status === "EVEN_MONEY") pill = `<span class="px-2 py-0.5 rounded-full bg-sky-300 text-black font-extrabold text-[9px] sm:text-[10px]">EVEN $${h.payout.toLocaleString()}</span>`;
               else if (h.status === "SHIELDED") pill = `<span class="px-2 py-0.5 rounded-full bg-cyan-400 text-black font-extrabold text-[9px] sm:text-[10px]">🛡️ SAVED $${h.payout.toLocaleString()}</span>`;
               else if (h.status === "CASHED_OUT") pill = `<span class="px-2 py-0.5 rounded-full bg-teal-400 text-black font-extrabold text-[9px] sm:text-[10px]">CASHED $${h.payout.toLocaleString()}</span>`;
               else if (h.status === "SURRENDERED") pill = `<span class="px-2 py-0.5 rounded-full bg-slate-300 text-black font-extrabold text-[9px] sm:text-[10px]">SURR $${h.payout.toLocaleString()}</span>`;
@@ -3994,7 +4298,7 @@
                 <div class="flex items-center gap-1.5 min-w-0">
                   <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-black/50 flex items-center justify-center text-sm sm:text-base shrink-0 aura-${escapeHTML(seat.aura || "none")}">${escapeHTML(seat.avatar)}</span>
                   <div class="min-w-0 leading-tight">
-                    <div class="font-bold text-[11px] sm:text-xs truncate ${isMe ? "theme-accent-text" : "text-white"}">${escapeHTML(seat.name)}</div>
+                    <div class="font-bold text-[11px] sm:text-xs truncate ${isMe ? "theme-accent-text" : "text-white"}">${escapeHTML(seat.name)} ${(seat.badges || []).map(b => `<span class="text-[10px]">${escapeHTML(b)}</span>`).join("")}</div>
                     <div class="text-[8px] sm:text-[9px] font-mono uppercase text-slate-400 truncate">${escapeHTML(getTitleName(seat.title))}</div>
                   </div>
                 </div>
@@ -4022,8 +4326,11 @@
         const insBox = document.getElementById("insurance-controls");
         const turnBox = document.getElementById("turn-controls");
         const waitBox = document.getElementById("waiting-controls");
+        const specBox = document.getElementById("spectator-controls");
         const nextBtn = document.getElementById("btn-next-round");
-        betBox.classList.add("hidden"); insBox.classList.add("hidden"); turnBox.classList.add("hidden"); waitBox.classList.add("hidden");
+        betBox.classList.add("hidden"); insBox.classList.add("hidden"); turnBox.classList.add("hidden"); waitBox.classList.add("hidden"); specBox.classList.add("hidden");
+
+        const mySpec = !me ? (roomState.spectators || []).find(sp => sp.id === profile.id) : null;
 
         if (roomState.phase === "BETTING" && me && !roomState.paused) {
           betBox.classList.remove("hidden");
@@ -4043,17 +4350,45 @@
           document.querySelectorAll(".chip-btn").forEach(btn => {
             btn.disabled = Number(btn.dataset.chip) > avail;
           });
+        } else if (mySpec) {
+          specBox.classList.remove("hidden");
+          const sel = document.getElementById("spectator-seat-select");
+          const prevVal = sel.value;
+          const seatedOpts = roomState.seats.map((s, i) => s ? `<option value="${i}">Seat ${i + 1}: ${escapeHTML(s.name)}</option>` : "").filter(Boolean);
+          sel.innerHTML = seatedOpts.join("") || `<option value="0">No seated players</option>`;
+          if (prevVal && roomState.seats[Number(prevVal)]) sel.value = prevVal;
+          const bbAmt = mySpec.betBehind ? mySpec.betBehind.amount : 0;
+          document.getElementById("spectator-bet-status").textContent = bbAmt > 0 ? `Bet Behind Seat ${mySpec.betBehind.seatIndex + 1}: $${bbAmt}` : "Bet: $0";
+          const canBetBehind = roomState.phase === "BETTING";
+          document.getElementById("btn-bet-behind-25").disabled = !canBetBehind;
+          document.getElementById("btn-bet-behind-100").disabled = !canBetBehind;
+          document.getElementById("btn-bet-behind-clear").disabled = !canBetBehind;
+          const hasOpenSeat = roomState.seats.some(s => s === null);
+          document.getElementById("btn-take-open-seat").classList.toggle("hidden", !hasOpenSeat);
         } else if (roomState.phase === "INSURANCE" && me && me.hands.length && !me.insuranceDecided && !roomState.paused) {
           insBox.classList.remove("hidden");
-          const cost = Math.floor((me.hands[0].wagered || me.hands[0].bet) / 2);
-          document.getElementById("btn-take-insurance-label").textContent = `Take Insurance ($${cost.toLocaleString()})`;
-          document.getElementById("btn-take-insurance").disabled = me.bankroll < cost || cost <= 0;
+          const h0 = me.hands[0];
+          if (h0.status === "BLACKJACK") {
+            const pay = (h0.wagered || h0.bet) * 2;
+            document.getElementById("insurance-prompt-text").textContent = "You have BLACKJACK vs Dealer Ace — Take Even Money (1:1)?";
+            document.getElementById("btn-take-insurance-label").textContent = `Even Money ($${pay.toLocaleString()})`;
+            document.getElementById("btn-decline-insurance-label").textContent = "Risk 3:2";
+            document.getElementById("btn-take-insurance").disabled = false;
+          } else {
+            const cost = Math.floor((h0.wagered || h0.bet) / 2);
+            document.getElementById("insurance-prompt-text").textContent = "Dealer shows Ace — Insurance pays 2:1?";
+            document.getElementById("btn-take-insurance-label").textContent = `Take Insurance ($${cost.toLocaleString()})`;
+            document.getElementById("btn-decline-insurance-label").textContent = "No Thanks";
+            document.getElementById("btn-take-insurance").disabled = me.bankroll < cost || cost <= 0;
+          }
         } else if (roomState.phase === "PLAYER_TURNS" && me && roomState.activeSeatIndex === myIdx && !roomState.paused) {
           turnBox.classList.remove("hidden");
           const h = me.hands[roomState.activeHandIndex];
           const isFreeDbl = roomState.activeEvent === "free_double";
           const canDouble = h && h.cards.length === 2 && (isFreeDbl || me.bankroll >= h.bet);
-          const canSplit = h && me.hands.length === 1 && h.cards.length === 2 && cardVal(h.cards[0].rank) === cardVal(h.cards[1].rank) && me.bankroll >= h.bet;
+          const isPairAces = h && h.cards.length === 2 && h.cards[0].rank === "A" && h.cards[1].rank === "A";
+          const maxHands = (roomState.resplitAces && isPairAces) ? 3 : 2;
+          const canSplit = h && me.hands.length < maxHands && h.cards.length === 2 && cardVal(h.cards[0].rank) === cardVal(h.cards[1].rank) && me.bankroll >= h.bet;
           const canSurrender = h && h.cards.length === 2 && !h.isSplit;
 
           document.getElementById("btn-double").disabled = !canDouble;
@@ -4090,14 +4425,167 @@
 
         document.getElementById("hud-house-edge").textContent = `${baseEdge.toFixed(2)}%`;
         const peEl = document.getElementById("hud-player-edge");
-        peEl.textContent = `${playerEdge >= 0 ? "+" : ""}${playerEdge.toFixed(2)}%`;
-        peEl.className = `font-mono font-extrabold text-sm ${playerEdge > 0 ? "text-emerald-400" : "text-slate-200"}`;
-
-        document.getElementById("hud-running-count").textContent = rc > 0 ? `+${rc}` : `${rc}`;
-        document.getElementById("hud-true-count").textContent = tc.toFixed(1);
+        if (profile.settings.countDrill) {
+          peEl.textContent = "DRILL";
+          peEl.className = "font-mono font-extrabold text-sm text-indigo-300";
+          document.getElementById("hud-running-count").textContent = "•••";
+          document.getElementById("hud-true-count").textContent = "•••";
+        } else {
+          peEl.textContent = `${playerEdge >= 0 ? "+" : ""}${playerEdge.toFixed(2)}%`;
+          peEl.className = `font-mono font-extrabold text-sm ${playerEdge > 0 ? "text-emerald-400" : "text-slate-200"}`;
+          document.getElementById("hud-running-count").textContent = rc > 0 ? `+${rc}` : `${rc}`;
+          document.getElementById("hud-true-count").textContent = tc.toFixed(1);
+        }
+        updateDrillAndGraderUI();
         document.getElementById("stat-wins").textContent = profile.stats.wins;
         document.getElementById("stat-pushes").textContent = profile.stats.pushes;
         document.getElementById("stat-losses").textContent = profile.stats.losses;
+      }
+
+
+      /* -----------------------------------------------------------------------
+       * 8B. LIVE STRATEGY GRADER, ACHIEVEMENTS, CHAT & HI-LO DRILL ENGINE
+       * --------------------------------------------------------------------- */
+      function gradePlayerMove(chosenMove) {
+        if (!roomState || roomState.phase !== "PLAYER_TURNS") return;
+        const myIdx = roomState.seats.findIndex(s => s && s.id === profile.id);
+        if (myIdx !== roomState.activeSeatIndex) return;
+        const me = roomState.seats[myIdx];
+        const h = me && me.hands[roomState.activeHandIndex];
+        const dealerUp = roomState.dealerHand[0];
+        if (!h || !dealerUp || dealerUp.hidden) return;
+
+        const isFreeDbl = roomState.activeEvent === "free_double";
+        const canDouble = h.cards.length === 2 && (isFreeDbl || me.bankroll >= h.bet);
+        const isPairAces = h.cards.length === 2 && h.cards[0].rank === "A" && h.cards[1].rank === "A";
+        const maxHands = (roomState.resplitAces && isPairAces) ? 3 : 2;
+        const canSplit = me.hands.length < maxHands && h.cards.length === 2 && cardVal(h.cards[0].rank) === cardVal(h.cards[1].rank) && me.bankroll >= h.bet;
+        const canSurrender = h.cards.length === 2 && !h.isSplit;
+
+        let opt = getBasicStrategy(h.cards, dealerUp, canSplit, canDouble, canSurrender);
+        if (opt.startsWith("STAND")) opt = "STAND";
+        strategyStats.total++;
+        if (chosenMove === opt) {
+          strategyStats.optimal++;
+          strategyStats.lastMistake = `✓ Optimal ${chosenMove}!`;
+        } else {
+          strategyStats.lastMistake = `✗ Chose ${chosenMove} (Optimal: ${opt})`;
+          const acc = Math.round((strategyStats.optimal / strategyStats.total) * 100);
+          showSnackbar(`Coach: Optimal was ${opt} (you chose ${chosenMove}) • ${acc}% Accuracy`);
+        }
+        if (strategyStats.total >= 10 && (strategyStats.optimal / strategyStats.total) >= 0.90) {
+          checkAndUnlockAchievement("sharp_mind");
+        }
+        updateDrillAndGraderUI();
+      }
+
+      function updateDrillAndGraderUI() {
+        const accEl = document.getElementById("grader-accuracy-val");
+        const noteEl = document.getElementById("grader-last-note");
+        if (accEl && noteEl) {
+          if (strategyStats.total === 0) {
+            accEl.textContent = "—";
+            noteEl.textContent = "Make a play to grade against Basic Strategy.";
+          } else {
+            const pct = Math.round((strategyStats.optimal / strategyStats.total) * 100);
+            accEl.textContent = `${pct}% (${strategyStats.optimal}/${strategyStats.total})`;
+            accEl.className = `font-mono font-extrabold text-sm ${pct >= 85 ? "text-emerald-400" : pct >= 65 ? "text-amber-300" : "text-rose-400"}`;
+            noteEl.textContent = strategyStats.lastMistake || "";
+          }
+        }
+        const tBtn = document.getElementById("btn-toggle-drill");
+        const qBtn = document.getElementById("btn-drill-quiz-now");
+        if (tBtn && qBtn) {
+          const on = !!profile.settings.countDrill;
+          tBtn.textContent = on ? "ON" : "OFF";
+          tBtn.className = `px-2.5 py-1 rounded-full text-[10px] font-bold transition ${on ? "bg-emerald-500 text-black" : "bg-white/10 text-white"}`;
+          qBtn.classList.toggle("hidden", !on);
+        }
+      }
+
+      function openDrillModal() {
+        if (!roomState) return;
+        document.getElementById("drill-rc-input").value = "";
+        document.getElementById("drill-tc-input").value = "";
+        document.getElementById("drill-result-box").classList.add("hidden");
+        document.getElementById("drill-modal").classList.remove("hidden");
+      }
+
+      function checkAndUnlockAchievement(id) {
+        if (!profile.achievements) profile.achievements = [];
+        if (profile.achievements.includes(id)) return;
+        const ach = ACHIEVEMENTS.find(a => a.id === id);
+        if (!ach) return;
+        profile.achievements.push(id);
+        profile.safeVault += ach.reward;
+        saveProfile();
+        audio.playWin(true);
+        spawnCelebration(85);
+        showEventBanner({
+          name: `${ach.icon} ${ach.name} Unlocked!`,
+          desc: `${ach.desc} (+$${ach.reward} Safe Vault Bonus)`,
+          icon: "emoji_events",
+          color: "from-amber-400 via-yellow-400 to-emerald-400 text-black"
+        }, "ACHIEVEMENT UNLOCKED");
+        if (roomState) {
+          const badges = profile.achievements.slice(0, 2).map(aid => (ACHIEVEMENTS.find(a => a.id === aid) || {}).icon).filter(Boolean);
+          sendAction({ kind: "PROFILE_SYNC", name: profile.name, avatar: profile.avatar, title: profile.equippedTitle, aura: profile.equippedAura, badges });
+        }
+      }
+
+      function evaluateSessionAchievements(mySeat) {
+        if (!mySeat) return;
+        if ((profile.sessionBJs || 0) >= 3) checkAndUnlockAchievement("natural_born");
+        if ((mySeat.streak || 0) >= 5) checkAndUnlockAchievement("hot_streak");
+        if (profile.lowestStack < 100 && mySeat.bankroll >= 1000) checkAndUnlockAchievement("phoenix");
+        if (mySeat.sideResults && mySeat.sideResults.length > 0) checkAndUnlockAchievement("side_hustler");
+      }
+
+      function openAchievementsModal() {
+        const unlocked = profile.achievements || [];
+        document.getElementById("achievements-summary").textContent = `${unlocked.length} / ${ACHIEVEMENTS.length} Unlocked • Earn Bonus Safe Vault Chips`;
+        document.getElementById("achievements-list").innerHTML = ACHIEVEMENTS.map(a => {
+          const done = unlocked.includes(a.id);
+          return `
+            <div class="p-3.5 rounded-2xl border ${done ? "bg-emerald-500/15 border-emerald-400/50" : "bg-black/45 border-white/10"} flex items-start gap-2.5">
+              <div class="text-2xl shrink-0">${a.icon}</div>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between gap-1">
+                  <span class="font-bold text-white">${a.name}</span>
+                  <span class="font-mono text-[10px] px-2 py-0.5 rounded-full ${done ? "bg-emerald-400 text-black font-extrabold" : "bg-amber-500/20 text-amber-300"}">${done ? "UNLOCKED" : `+$${a.reward}`}</span>
+                </div>
+                <div class="text-[11px] text-slate-300 mt-0.5 leading-snug">${a.desc}</div>
+              </div>
+            </div>`;
+        }).join("");
+        document.getElementById("achievements-modal").classList.remove("hidden");
+      }
+
+      function renderChatDrawer() {
+        if (!roomState) return;
+        const log = roomState.chatLog || [];
+        const drawer = document.getElementById("chat-drawer");
+        const dot = document.getElementById("chat-unread-dot");
+        if (drawer.classList.contains("hidden") && log.length > seenChatCount) {
+          dot.classList.remove("hidden");
+        } else if (!drawer.classList.contains("hidden")) {
+          seenChatCount = log.length;
+          dot.classList.add("hidden");
+        }
+
+        const list = document.getElementById("chat-messages-list");
+        if (!list) return;
+        if (!log.length) {
+          list.innerHTML = `<div class="text-center text-slate-500 py-4">Say hello or fire a quick callout!</div>`;
+          return;
+        }
+        list.innerHTML = log.map(m => `
+          <div class="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/5">
+            <span class="mr-1">${escapeHTML(m.avatar || "👑")}</span>
+            <strong class="theme-accent-soft">${escapeHTML(m.sender)}:</strong>
+            <span class="text-slate-200 ml-1">${escapeHTML(m.text)}</span>
+          </div>`).join("");
+        list.scrollTop = list.scrollHeight;
       }
 
       /* -----------------------------------------------------------------------
@@ -4579,6 +5067,8 @@
         document.getElementById("admin-min-bet").value = roomState.minBet;
         document.getElementById("admin-max-bet").value = roomState.maxBet;
         document.getElementById("admin-h17-toggle").checked = !!roomState.hitSoft17;
+        document.getElementById("admin-charlie-toggle").checked = !!roomState.fiveCardCharlie;
+        document.getElementById("admin-resplit-aces-toggle").checked = !!roomState.resplitAces;
         document.getElementById("admin-powerups-toggle").checked = !!roomState.powerupsEnabled;
         document.getElementById("admin-event-freq").value = String(roomState.eventFreq);
         document.getElementById("btn-admin-pause").textContent = roomState.paused ? "Resume Table" : "Pause Table";
@@ -4643,11 +5133,11 @@
         } else if (roomState.phase === "PLAYER_TURNS") {
           const myIdx = roomState.seats.findIndex(s => s && s.id === profile.id);
           if (myIdx !== roomState.activeSeatIndex) return;
-          if (k === "h") sendAction({ kind: "HIT" });
-          else if (k === "s") sendAction({ kind: "STAND" });
-          else if (k === "d" && !document.getElementById("btn-double").disabled) sendAction({ kind: "DOUBLE" });
-          else if (k === "p" && !document.getElementById("btn-split").disabled) sendAction({ kind: "SPLIT" });
-          else if (k === "r" && !document.getElementById("btn-surrender").disabled) sendAction({ kind: "SURRENDER" });
+          if (k === "h") { gradePlayerMove("HIT"); sendAction({ kind: "HIT" }); }
+          else if (k === "s") { gradePlayerMove("STAND"); sendAction({ kind: "STAND" }); }
+          else if (k === "d" && !document.getElementById("btn-double").disabled) { gradePlayerMove("DOUBLE"); sendAction({ kind: "DOUBLE" }); }
+          else if (k === "p" && !document.getElementById("btn-split").disabled) { gradePlayerMove("SPLIT"); sendAction({ kind: "SPLIT" }); }
+          else if (k === "r" && !document.getElementById("btn-surrender").disabled) { gradePlayerMove("SURRENDER"); sendAction({ kind: "SURRENDER" }); }
         }
       });
 
@@ -4839,11 +5329,94 @@
         document.getElementById("btn-take-insurance").addEventListener("click", () => sendAction({ kind: "INSURANCE_DECISION", accept: true }));
         document.getElementById("btn-decline-insurance").addEventListener("click", () => sendAction({ kind: "INSURANCE_DECISION", accept: false }));
 
-        document.getElementById("btn-hit").addEventListener("click", () => sendAction({ kind: "HIT" }));
-        document.getElementById("btn-stand").addEventListener("click", () => sendAction({ kind: "STAND" }));
-        document.getElementById("btn-double").addEventListener("click", () => sendAction({ kind: "DOUBLE" }));
-        document.getElementById("btn-split").addEventListener("click", () => sendAction({ kind: "SPLIT" }));
-        document.getElementById("btn-surrender").addEventListener("click", () => sendAction({ kind: "SURRENDER" }));
+        document.getElementById("btn-hit").addEventListener("click", () => { gradePlayerMove("HIT"); sendAction({ kind: "HIT" }); });
+        document.getElementById("btn-stand").addEventListener("click", () => { gradePlayerMove("STAND"); sendAction({ kind: "STAND" }); });
+        document.getElementById("btn-double").addEventListener("click", () => { gradePlayerMove("DOUBLE"); sendAction({ kind: "DOUBLE" }); });
+        document.getElementById("btn-split").addEventListener("click", () => { gradePlayerMove("SPLIT"); sendAction({ kind: "SPLIT" }); });
+        document.getElementById("btn-surrender").addEventListener("click", () => { gradePlayerMove("SURRENDER"); sendAction({ kind: "SURRENDER" }); });
+
+        // Spectator Bet Behind & Take Seat Bindings
+        document.getElementById("btn-bet-behind-25").addEventListener("click", () => {
+          sendAction({ kind: "BET_BEHIND", seatIndex: Number(document.getElementById("spectator-seat-select").value), amount: 25 });
+        });
+        document.getElementById("btn-bet-behind-100").addEventListener("click", () => {
+          sendAction({ kind: "BET_BEHIND", seatIndex: Number(document.getElementById("spectator-seat-select").value), amount: 100 });
+        });
+        document.getElementById("btn-bet-behind-clear").addEventListener("click", () => {
+          sendAction({ kind: "BET_BEHIND", clear: true });
+        });
+        document.getElementById("btn-take-open-seat").addEventListener("click", () => sendAction({ kind: "TAKE_SEAT" }));
+
+        // Achievements Modal Bindings
+        document.getElementById("btn-lobby-achievements").addEventListener("click", openAchievementsModal);
+        document.getElementById("btn-close-achievements").addEventListener("click", () => document.getElementById("achievements-modal").classList.add("hidden"));
+
+        // Chat & Quick-Callout Soundboard Bindings
+        const chatDr = document.getElementById("chat-drawer");
+        const sbGrid = document.getElementById("chat-soundboard-grid");
+        sbGrid.innerHTML = CHAT_CALLOUTS.map((c, idx) =>
+          `<button data-sb-idx="${idx}" class="py-1.5 px-2 rounded-xl bg-black/50 hover:bg-white/15 border border-white/10 text-left text-slate-200 font-semibold truncate transition">${escapeHTML(c.text)}</button>`
+        ).join("");
+        sbGrid.querySelectorAll("[data-sb-idx]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const c = CHAT_CALLOUTS[Number(btn.dataset.sbIdx)];
+            if (c) sendAction({ kind: "CHAT_MSG", text: c.text, calloutFreq: c.freq });
+          });
+        });
+        document.getElementById("btn-toggle-chat").addEventListener("click", () => {
+          chatDr.classList.toggle("hidden");
+          if (!chatDr.classList.contains("hidden")) {
+            seenChatCount = (roomState && roomState.chatLog) ? roomState.chatLog.length : 0;
+            document.getElementById("chat-unread-dot").classList.add("hidden");
+            renderChatDrawer();
+          }
+        });
+        document.getElementById("btn-close-chat").addEventListener("click", () => chatDr.classList.add("hidden"));
+        function submitChatMsg() {
+          const inp = document.getElementById("chat-input");
+          const txt = inp.value.trim();
+          if (!txt) return;
+          inp.value = "";
+          sendAction({ kind: "CHAT_MSG", text: txt });
+        }
+        document.getElementById("btn-send-chat").addEventListener("click", submitChatMsg);
+        document.getElementById("chat-input").addEventListener("keydown", e => { if (e.key === "Enter") submitChatMsg(); });
+
+        // Hi-Lo Count Drill Bindings
+        document.getElementById("btn-toggle-drill").addEventListener("click", () => {
+          profile.settings.countDrill = !profile.settings.countDrill;
+          handsSinceDrill = 0;
+          saveProfile();
+          if (roomState) updateControlsAndHUD();
+          else updateDrillAndGraderUI();
+          showSnackbar(profile.settings.countDrill ? "Hi-Lo Count Drill ON — live count hidden!" : "Hi-Lo Count Drill OFF");
+        });
+        document.getElementById("btn-drill-quiz-now").addEventListener("click", openDrillModal);
+        document.getElementById("btn-close-drill").addEventListener("click", () => document.getElementById("drill-modal").classList.add("hidden"));
+        document.getElementById("btn-submit-drill").addEventListener("click", () => {
+          if (!roomState) return;
+          const actualRC = roomState.runningCount || 0;
+          const shoeLen = roomState.shoe && roomState.shoe.length ? roomState.shoe.length : (roomState.shoeCount ?? (roomState.decks * 52));
+          const actualTC = Number((actualRC / Math.max(0.5, shoeLen / 52)).toFixed(1));
+          const guessRC = parseInt(document.getElementById("drill-rc-input").value, 10);
+          const guessTC = parseFloat(document.getElementById("drill-tc-input").value);
+          if (Number.isNaN(guessRC)) { showSnackbar("Enter your Running Count estimate.", "error"); return; }
+          profile.drillTotal = (profile.drillTotal || 0) + 1;
+          const exactRC = guessRC === actualRC;
+          const closeTC = !Number.isNaN(guessTC) && Math.abs(guessTC - actualTC) <= 0.6;
+          const resBox = document.getElementById("drill-result-box");
+          resBox.classList.remove("hidden");
+          if (exactRC) {
+            profile.drillCorrect = (profile.drillCorrect || 0) + 1;
+            profile.safeVault += 150;
+            saveProfile();
+            audio.playWin(false);
+            resBox.innerHTML = `<div class="text-emerald-300 font-bold">✓ Spot-on Running Count (${actualRC >= 0 ? "+" : ""}${actualRC})! +$150 Safe Vault bonus!</div><div class="text-slate-300 mt-1">Actual True Count: ${actualTC.toFixed(1)} ${closeTC ? "(True Count nailed too!)" : ""} • Drill Score: ${profile.drillCorrect}/${profile.drillTotal}</div>`;
+          } else {
+            saveProfile();
+            resBox.innerHTML = `<div class="text-amber-300 font-bold">Actual Running Count: ${actualRC >= 0 ? "+" : ""}${actualRC} (You guessed ${guessRC >= 0 ? "+" : ""}${guessRC})</div><div class="text-slate-300 mt-1">Actual True Count: ${actualTC.toFixed(1)} • Drill Score: ${profile.drillCorrect}/${profile.drillTotal}</div>`;
+          }
+        });
         document.getElementById("btn-early-cashout").addEventListener("click", () => sendAction({ kind: "EARLY_CASHOUT" }));
         document.getElementById("btn-next-round").addEventListener("click", resetNewRound);
         document.querySelectorAll(".emote-btn").forEach(b => b.addEventListener("click", () => sendAction({ kind: "EMOTE", symbol: b.dataset.emote })));
@@ -4922,6 +5495,9 @@
             profile.sessionStartTotal = profile.tableStack + profile.safeVault;
             sessionHistory = [];
             pnlCurve = [0];
+            strategyStats = { optimal: 0, total: 0, lastMistake: null };
+            profile.sessionBJs = 0;
+            profile.lowestStack = profile.tableStack;
             saveProfile();
             renderHistoryDrawer();
             if (roomState) updateControlsAndHUD();
@@ -4984,6 +5560,8 @@
           roomState.minBet = minB;
           roomState.maxBet = maxB;
           roomState.hitSoft17 = document.getElementById("admin-h17-toggle").checked;
+          roomState.fiveCardCharlie = document.getElementById("admin-charlie-toggle").checked;
+          roomState.resplitAces = document.getElementById("admin-resplit-aces-toggle").checked;
           roomState.powerupsEnabled = document.getElementById("admin-powerups-toggle").checked;
           roomState.eventFreq = Number(document.getElementById("admin-event-freq").value);
 
@@ -5093,6 +5671,7 @@
                 titles: Array.from(new Set([...DEFAULT_UNLOCKS.titles, ...((restored.unlocks && restored.unlocks.titles) || [])])),
                 auras: Array.from(new Set([...DEFAULT_UNLOCKS.auras, ...((restored.unlocks && restored.unlocks.auras) || [])]))
               },
+              achievements: Array.isArray(restored.achievements) ? Array.from(new Set(restored.achievements)) : (profile.achievements || []),
               powerups: { ...DEFAULT_POWERUPS, ...(restored.powerups || {}) },
               settings: { ...DEFAULT_SETTINGS, ...(restored.settings || {}) }
             };
